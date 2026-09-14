@@ -1,0 +1,17 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Raw SROIE data must be fetched by each reproducer per README (license terms unclear)
+data/raw/sroie/*
+!data/raw/sroie/.gitkeep
+
+# Trained adapters are large binary artifacts, not source
+models/*
+!models/.gitkeep
+
+# Local logs
+*.log
+wandb/

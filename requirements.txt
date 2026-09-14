@@ -1,0 +1,14 @@
+transformers>=4.42
+peft>=0.11
+trl>=0.9
+bitsandbytes>=0.43
+accelerate>=0.31
+datasets>=2.19
+torch>=2.3
+requests>=2.31               # synthetic data generation (§5.3) — direct REST call to Gemini API, see README deviation notes
+python-dotenv>=1.0           # loads .env for GEMINI_API_KEY / WANDB_API_KEY
+python-dateutil>=2.9        # date normalization in eval metrics (§7.1)
+pytest>=8.0
+# sagemaker>=2.220  # not used — no AWS budget for this run, see README deviation notes
+# boto3>=1.34        # not used — see above
+# gradio>=4.36        # optional demo UI, not built in this run

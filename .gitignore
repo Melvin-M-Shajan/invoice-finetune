@@ -8,6 +8,14 @@ venv/
 data/raw/sroie/*
 !data/raw/sroie/.gitkeep
 
+# train.jsonl/val.jsonl/test_sroie.jsonl embed real SROIE OCR text (unclear license,
+# PRD §13 mitigation) — regenerable by rerunning src/data/prepare_dataset.py, which is
+# deterministic given synthetic_raw.jsonl (committed) + a fresh SROIE download.
+# test_synthetic.jsonl is pure synthetic data and safe to commit.
+data/processed/train.jsonl
+data/processed/val.jsonl
+data/processed/test_sroie.jsonl
+
 # Trained adapters are large binary artifacts, not source
 models/*
 !models/.gitkeep
@@ -15,3 +23,5 @@ models/*
 # Local logs
 *.log
 wandb/
+.pytest_cache/
+.pytest_tmp/

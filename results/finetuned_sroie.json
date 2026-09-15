@@ -1,0 +1,2016 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "mode": "finetuned",
+  "adapter": "models/invoice-lora-v1",
+  "test_path": "data/processed/test_sroie.jsonl",
+  "n_examples": 100,
+  "aggregate": {
+    "vendor": 0.69,
+    "invoice_date": 0.94,
+    "total": 0.93,
+    "overall_f1": 0.8533333333333335
+  },
+  "mean_latency_seconds": 6.3397160650000295,
+  "examples": [
+    {
+      "invoice_text": "A03862 RESTAURANT TONY ROMA'S AEON TEBRAU CITY GRAND COMPANIONS SON BHD (285560-H) LOT G112, AEON MALL TEBRAU CITY NO 1 JALAN DESA TEBRAU 81100 JOHOR BAHRU Tel: 07-3510749 Website: www.tonyromas.com.my Facebook: www.facebook.com/TRMALAYSIA GST ID:000436699136 2 TR1 1014 FAZLIN Chk 65991 Guest3 03 Mar 19 05:16:55 PM TBL43 / 1 1 NY STRIP 67.67 S Medium Well RANCH BEANS SLAW 1 NY STRIP 67.67 S Medium FR ROASTED VEGE BAKED POTATO Loaded 1 NY STRIP 67.67 S Medium Well FR ROASTED VEGE FF 1 ICE LATTE 9.35 S 1 7UP 9.35 S 1 PEPSI 9.35 S Subtotal 231.06 10% Srv Chg 23.10 GST @6% 15.25 Total 269.40 RM 10 OFF FOR A MINIMUM OF RM 50 SPENT ON YOUR NEXT VISIT TO TONY ROMA'S !! GO TO :WWW.TONYCARES.COM PLEASE TELL US HOW WE ARE DOING Store # 0217 SURVEY VALIDATION CODE This Receipt With Validation Code Is Valid 3 Months From Date of Receipt One redemption per group, per visit. WE'RE HIRING - A11 Position Avariables Excellent pay, benefits & growth Apply at recruitmentu.onyromas.com.m. GST @6% included in total GSTSummary Amount (RM) GST(RM) S=GST 06%: 254.17 15.25 Z=GST 00%: 0.00 0.00",
+      "ground_truth": {
+        "vendor": "GRAND COMPANIONS SON BHD",
+        "invoice_date": "2019-03-03",
+        "total": 269.4
+      },
+      "prediction": {
+        "vendor": "TORY ROMA'S",
+        "invoice_date": "2019-03-03",
+        "total": 269.4
+      },
+      "raw_output": "{\"vendor\": \"TORY ROMA'S\", \"invoice_date\": \"2019-03-03\", \"total\": 269.4}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.376543600001241
+    },
+    {
+      "invoice_text": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SON BHD 822737-X NO. 17-G, JALAN SETIA INDAH (X) U13/X, SETIA ALAM, SEKSYEN 013, 40170 SHAH ALAM TEL: 012 - 6651783 FAX: 03 - 33623608 GST NO: 000394528768 SIMPLIFIED TAX INVOICE CASH RECEIPT #: CSP0382398 DATE: 30/03/2017 SALESPERSON : AH002 TIME: 16:44:00 ITEM QTY U/P AMOUNT (RM) (RM) 6521000000008 6.00 6.00 S 8\"× 3.6MM(100PCS)BLACK CABLE TIES TOTAL QUANTITY SUB-TOTAL (GST) 6.00 DISC 0.00 ROUNDING 0.00 TOTAL 6.00 CASH 20.00 CHANGE 14.00 *GST @ 6% INCLUDED IN TOTAL GST SUMMARY CODE AMOUNT % TAX/AMT SR 5.66 6 0.34 TAX TOTAL: 0.34 GOODS SOLD ARE NOT REFUNDABLE, THANK YOU FOR CHOOSING US. FLS PROVIDE ORIGINAL BILL FOR GOODS EXCHANGE WITHIN 1 WEEK PROM TRANSACTION GOODS MUST BE IN ORIGINAL STATE TO BE ENTITLED FOR EXCHANGE.",
+      "ground_truth": {
+        "vendor": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SON BHD",
+        "invoice_date": "2017-03-30",
+        "total": 6.0
+      },
+      "prediction": {
+        "vendor": "AHUAT",
+        "invoice_date": "2017-03-30",
+        "total": 6
+      },
+      "raw_output": "{\"vendor\": \"AHUAT\", \"invoice_date\": \"2017-03-30\", \"total\": 6}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 4.900656800000434
+    },
+    {
+      "invoice_text": "3-1707067 (481500-M) C W KHOO HARDWARE SDN BHD NO.50 , JALAN PBS 14/11 , KAWASAN PERINDUSTRIAN BUKIT SERDANG, Tel : 03-89410243 Fax : 03-89410243 GST Reg No. : 000549584896 Tax Invoice Invoice No. : CR 1803/0064 Date : 01-03-18 5:23:26 PM Cashier No. : khoo Counter No. : c1 Printed Date : 01-03-18 5:23:30 PM Item Name Qty Unit Price Amount AIR ADAPTOR @ 1 5 4.00 20.00 SR 5 Item(s) Total (MYR) : 20.00 GST @ 6% : 1.20 Net Total (MYR) : 21.20 Rounding Adj. : 0.00 Net Total Rounded (MYR) : 21.20 Cash 21.20 Change 0.00 GST Summary Item Amount (MYR) GST (MYR) SR @ 6% 1 20.00 1.20 Thank You. Please Come Again !",
+      "ground_truth": {
+        "vendor": "C W KHOO HARDWARE SDN BHD",
+        "invoice_date": "2018-03-01",
+        "total": 21.2
+      },
+      "prediction": {
+        "vendor": "C W KHOO HARDWARE SDN BHD",
+        "invoice_date": "2018-03-01",
+        "total": 21.2
+      },
+      "raw_output": "{\"vendor\": \"C W KHOO HARDWARE SDN BHD\", \"invoice_date\": \"2018-03-01\", \"total\": 21.2}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.932948699999542
+    },
+    {
+      "invoice_text": "IKANO HANDEL SDN BHD (1074617K) IKEA Cheras No 2A Jalan Cochrane Taman Maluri 55100 KUALA LUMPUR GST No.: 000115154944 TAX INVOICE Slip: 0000000011000136498 Date: 27/07/17 Time: 1:12 Trans: 311136194 Staff : 95837 Description Amount TX 50346155 BOSTRAK WRD 80X50X18 2 pc @ 269.00 538.00 SRS Total RM Including GST 6% 538.00 Rounding Adj 0.00 Total Rounded 538.00 Visa -538.00 GST SR 6% 538.00 30.45 Amt. Excl. GST 507.55 No. of Items 2 ==== Thank you. Please come again. *T3620000011000136498*",
+      "ground_truth": {
+        "vendor": "IKANO HANDEL SDN BHD",
+        "invoice_date": "2017-07-27",
+        "total": 538.0
+      },
+      "prediction": {
+        "vendor": "IKANO HANDEL SDN BHD",
+        "invoice_date": "2017-07-27",
+        "total": 538
+      },
+      "raw_output": "{\"vendor\": \"IKANO HANDEL SDN BHD\", \"invoice_date\": \"2017-07-27\", \"total\": 538}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.8544091999992816
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KI.) SDN BHD (139386 X) Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam,'Selangor. Tel: 03- 55423228 Fax:03- 55423213 GST ID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7806F710 VE0514 Date: 06/08/2017 MAKASSAR FRESH MARKET SDN BHD GROUND FLOOR, NO. 4 & 6, JALAN SS 15/4B, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan(11900) DD: 06/08/2017 10:49 Description U.P Iss Exc D Sale Amt(RM) O. C. WHITE 2.13 12 0 12 25.56 WHOLEMEAL 2.78 5 5 13.90 O.C JUMBO 2.97 5 14.85 Total 0% supplies: 54.31 TWIG-CHOC 1.33 10 0 0 10 13.30 Total 6% supplies (excl. GST): 13.30 GST: 0.80 Total 6% supplies (Inc. GST): 14.10 Total 0% supplies: 54.31 Total Payable: 68.41 E.&.O.E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax clauns, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KI.) SDN BHD",
+        "invoice_date": "2017-08-06",
+        "total": 68.41
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KI.) SDN BHD",
+        "invoice_date": "2017-08-06",
+        "total": 68.41
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KI.) SDN BHD\", \"invoice_date\": \"2017-08-06\", \"total\": 68.41}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.352885900001638
+    },
+    {
+      "invoice_text": "Subway#42210-0 Phone 03-78870693 URBAN IDEA SDN BHD (417940-M), A-G-06, DATARAN GLOMAC, JALAN SS6/5A, PUSAT BANDAR KELANA JAYA, 47301 PETALING JAYA, SELANGOR, Malaysia Served by: rojan 27/02/2018 15:32:47 Tax Invoice# 1/A-42210-140220 GST ID: 000220499968 Qty Size Item Price ... Bag Fee RMO.20 - - (MY) EDV Meal RM11.90 6\" -Meatball Sub -16oz Fountain Drink -1 Cookies (MY) EDV Meal RM11.90 6\" -BBQ Chicken Strips Sub -16oz Fountain Drink -1 Cookies Cash Rounding -RM0.01 Total (Eat In) RM24.00 / Cash RM30.00 Change RM6.00 Tax Info: GST 6% (6%) RM1.36 Total-Excl-GST RM22.65 Take our 1 Minute Survey at www.tellsubway.my and get a FREE COOKIE with next purchase.Redemption of 1 cookie per transaction",
+      "ground_truth": {
+        "vendor": "URBAN IDEA SDN BHD",
+        "invoice_date": "2018-02-27",
+        "total": 22.65
+      },
+      "prediction": {
+        "vendor": "URBAN IDEA SDN BHD",
+        "invoice_date": "2018-02-27",
+        "total": 24.0
+      },
+      "raw_output": "{\"vendor\": \"URBAN IDEA SDN BHD\", \"invoice_date\": \"2018-02-27\", \"total\": 24.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": false
+      },
+      "latency_seconds": 5.79100920000019
+    },
+    {
+      "invoice_text": "A040:31 BHPetrol Permas Jaya 2 LOT PTD 101051 Jalan Permas 10/10 81750 Masai, Johor PREPAY CHIT NUMBER 26971 THIS IS NOT A RECEIPT A Tax Invoice will be issued upon the completion of the sale transaction 03-04-2018 08:15:14 Cashier: 465 Transaction No: 1-481374 Item U\\Price Qnty Amount PPF P6 1.000 50 50.00 TOTAL AMOUNT CASH RM 50.00 Thank You For Shopping At BHPetromart Customer Service 1-300-22-2828",
+      "ground_truth": {
+        "vendor": "BHPetrol Permas Jaya 2",
+        "invoice_date": "2018-04-03",
+        "total": 50.0
+      },
+      "prediction": {
+        "vendor": "BHPetrol Permas Jaya",
+        "invoice_date": "2018-04-03",
+        "total": 50
+      },
+      "raw_output": "{\"vendor\": \"BHPetrol Permas Jaya\", \"invoice_date\": \"2018-04-03\", \"total\": 50}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.62341220000053
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No.2, Jalan Temenggung 19/9, Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No.: 1212055 Cashier: Thandar Date : 26-06-2018 13:37:55 Description Qty U.price Total TAX Cham (B) 1 × 2.10 2.10 ZRL Bunga Kekwa 1 × 1.60 1.60 ZRL Take Away 2 x 0.20 0.40 ZRL Total QTY: 4 Total (Excluding GST): 4.10 Total (Inclusive of GST): 4.10 TOTAL : 4.10 CASH : 4.10 GST Summary Amount (RM) Tax (RM) ZRL (@ 0%) 4.10 0.00",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-06-26",
+        "total": 4.1
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-06-26",
+        "total": 4.1
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-06-26\", \"total\": 4.1}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.436351600001217
+    },
+    {
+      "invoice_text": "TONYMOLY VIVA CITY (TONYMOLY SHOP (95874)) UNIT L1-044B, VIVACITY MEGAMALL, JALAN WAN ALWI, 93350 KUCHING, SARAWAK. GST ID : 000349356032 Tax Invoice TERMINAL : 880 SALES NO. 8807947 SALES DATE : 29/03/2018 20:19:38 LASHIER : Then Fiona CLIENT : CASH POINT EARNED : 0 PURE ECO SNAIL MOISTURE GEL 300 [SR] BD06000800 1 * 39.90 39.90 Item Count - Total Sales Incl. GST 39.90 Rounding Adjustment 0.00 Total After Rounding 39.90 VISA 39.90 Card No 46 xxxxxxxx 1819 App. Code a0000000031010 46 xxxxxxxx 1819 GS Summary Amount(RM) Tax(RM) SR = 6% 37.64 2.26 Printed on: 29-03-2018 20:19:59 Thank Vou",
+      "ground_truth": {
+        "vendor": "TONYMOLY VIVA CITY",
+        "invoice_date": "2018-03-29",
+        "total": 39.9
+      },
+      "prediction": {
+        "vendor": "TONYMOLY",
+        "invoice_date": "2018-03-29",
+        "total": 39.9
+      },
+      "raw_output": "{\"vendor\": \"TONYMOLY\", \"invoice_date\": \"2018-03-29\", \"total\": 39.9}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.604330699999991
+    },
+    {
+      "invoice_text": "TS TOOLS HARDWARE & MACHINERY SOR EED 1151414-P 59, JALAN BANDAR SATU, PUSAT BANDAR PUCHONG 47160, PUCHONG, SELANGOR TÉL: 03-58790352 GST NO: 000761802752 TAX INVOICE RECEIPT #: CS00032256 DATE: 21/03/2018 SALESPERSON : TIME: 13:40:00 CASHIER : USER ITEM QTY U/P AMOUNT (RM) (RM) --- 2017 1 7.00 7.00 SR: (UNIT) 29#SAMURAI SPRAY PAINT ---- TOTAL QUANTITY 1 SUB-TOTAL 7.00 DISC 0.00 TAX 0.00 ROUNDING -0.02 TOTAL 7.40 CASH 8.00 CHANGE 0.60 ---- GST SUMMARY CODE AMOUNT % TAX/AMT SR 7.00 6 0.42 TAX TOTAL: 0.42 GOODS SOLD ARE NOT RETURNABLE, THANK YOU.",
+      "ground_truth": {
+        "vendor": "TS TOOLS HARDWARE & MACHINERY SOR EED",
+        "invoice_date": "2018-03-21",
+        "total": 7.4
+      },
+      "prediction": {
+        "vendor": "TS TOOLS HARDWARE & MACHINERY",
+        "invoice_date": "2018-03-21",
+        "total": 7.4
+      },
+      "raw_output": "{\"vendor\": \"TS TOOLS HARDWARE & MACHINERY\", \"invoice_date\": \"2018-03-21\", \"total\": 7.4}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.0260732999995525
+    },
+    {
+      "invoice_text": "31802013 . Tax Invoice LA STATIONERY SDN BHD (640899-P) NO.8, JALAN 46/26, TAMAN SRI RAMPAI, 53300 KUALA LUMPUR. Tel No. : 03 - 4023 0088 GST Reg. : 001542721536 Invoice No. : T01-006194 Date : 09/02/2018 09:21:19 AM Terminal : TO1 Cashier : VICKIE DESC U. PRICE Disc AMOUNT TAX RM RM CODE GELPEN REFILL PILOT G2 0.5 BLACK 5 PCS * 2.86 0.00 14.30 SR GELPEN REFILL PILOT G2 0.5 BLUE 5 PCS 2.86 0.00 14.30 SR GELPEN REFILL PILOT G2 0.5 RED 2 PCS * 2.86 0.00 5.72 SR GLUE - CLEAR GLUE 1000ML 1 BTL * 7.42 0.00 7.42 SR LIQUID PAPER - PAPERMATE NP10 7ml. 2 PCS * 3.71 0.00 7.42 SR PERMANENT MARKER SHARPIE FINE BLACK 30051 1 PCS * 2.33 0.00 2.33 SR BALLPEN PILOT FRIXION 0.5 BLACK 1 PCS * 5.30 0.00 5.30 SR Sub Total(Inclusive GST) : 56.80 Rounding Adjustment : 0.01 Rounded Total (RM): 56.80 Cash 100.00 Cash Change 43.20 GST Summary Amount(RM) Tax(RM) SR @ 6 % 53.58 3.21 |",
+      "ground_truth": {
+        "vendor": "LA STATIONERY SDN BHD",
+        "invoice_date": "2018-02-09",
+        "total": 56.8
+      },
+      "prediction": {
+        "vendor": "LA STATIONERY SDN BHD",
+        "invoice_date": "2018-02-09",
+        "total": 56.8
+      },
+      "raw_output": "{\"vendor\": \"LA STATIONERY SDN BHD\", \"invoice_date\": \"2018-02-09\", \"total\": 56.8}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.099723500001346
+    },
+    {
+      "invoice_text": "TAX INVOICE BHPetrol Subang Airport Jalan Lapangan Terbang Subang 47200 Subang Selangor D'Rosh Servport CO. REG. NO: 000948487-V GST REG. NO: 000768122880 18-01-2018 15:44:46 Cashier: 888 Invoice No: 1-916166 Item U\\Price Qnty Amount -- infiniti 97 E4MP3 2.570 16.32 41.95 S TOTAL SALES RM 41.95 TOTAL AMOUNT PAYABLE RM 41.95 X EDC MASTER RM 41.95 CST SUMMARY Amount RM Tax RM S: Standard 6% 39.58 2.37 ECARD WONG TAI CHIN Card Number 7897139011685960 Merchant Number 000001020138429 Reference Number 199258579655 AWARD Balance 412 Earned 41 New Balance 453 EPOINTS Expiry 24 31/10/2020 136 30/11/2020 Thank You For Shopping At CHPetromart Customer Service 1-300-22-2828",
+      "ground_truth": {
+        "vendor": "BHPetrol Subang Airport",
+        "invoice_date": "2018-01-18",
+        "total": 41.95
+      },
+      "prediction": {
+        "vendor": "BHPetrol Subang",
+        "invoice_date": "2018-01-18",
+        "total": 41.95
+      },
+      "raw_output": "{\"vendor\": \"BHPetrol Subang\", \"invoice_date\": \"2018-01-18\", \"total\": 41.95}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.134026100000483
+    },
+    {
+      "invoice_text": "PROSPER NIAGA Company No : SA0099552-P LOT PT 1138 ,PT 33122, BANDAR MAHKOTA CHERAS 43200 CHERAS, SELANGOR Site : 2365 Tel No: 03-90199450 GST No : 000534347776 >>>>>>> Pre-Authorisation <<<<< Pre auth code A02A1530024046 38.61 litre Pump # 07 V-Power 97 RM 100.00 K 2.590 RM / litre Total RM 100.00 Cash RM 100.00 0.00% SR GST K RM 0.00 Total Gross K RM 100.00 Cashier: MFikri2 This is not the final fiscal receipt Date Time Num POS CNO Shift 26/06/18 22:40 45107 02 9577 659 Diesel & Petrol RON95 given relief under Section 56(3) (b) GST Act 2014 Thank You and Please Come Again",
+      "ground_truth": {
+        "vendor": "PROSPER NIAGA",
+        "invoice_date": "2018-06-26",
+        "total": 100.0
+      },
+      "prediction": {
+        "vendor": "PROSPER NIAGA",
+        "invoice_date": "2018-06-26",
+        "total": 100
+      },
+      "raw_output": "{\"vendor\": \"PROSPER NIAGA\", \"invoice_date\": \"2018-06-26\", \"total\": 100}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.489127400000143
+    },
+    {
+      "invoice_text": "31802013 SWEET FOREST CAFE NO 21, JLN BUNGA KANTAN TAMAN P.RAMLEE SETAPAK 53000 KUALA LUMPUR. (GST Reg. No : 000465809408) Tax Invoice Table 15 INV No.: 593101 Pax(s): 2 Date : 14-02-2018 13:02:42 Cashier : SIM ITAN WAI Description Qty U.price Total TAX Smoked Duck Spaghetti 1 × 12.50 12.50 SR Hot Green Tea 1 × 3.00 3.00 SR Coffee(H) 1 × 4.90 4.90 SR Rendang Chicken Rice 1 × 9.90 9.90 SR Total QTY: 4 Total (Excluding GST): 28.58 GST payable (6%): 1.72 Total (Inclusive of GST): 30.30 TOTAL : 30.30 Closed: 001 14-02-2018 13:50:58 Server: SIM JIAN WAI CASH : 14/2/18 50.00 CHANGE : 19.70 30. 30 GST Summary Amount (RM) Tax(RM) SR (@ 6%) 28.58 1.72/",
+      "ground_truth": {
+        "vendor": "SWEET FOREST CAFE",
+        "invoice_date": "2018-02-14",
+        "total": 30.3
+      },
+      "prediction": {
+        "vendor": "SWEET FOREST CAFE",
+        "invoice_date": "2018-02-14",
+        "total": 30.3
+      },
+      "raw_output": "{\"vendor\": \"SWEET FOREST CAFE\", \"invoice_date\": \"2018-02-14\", \"total\": 30.3}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.203194800000347
+    },
+    {
+      "invoice_text": "THONG RECIPE 16G BLOCK B ,ZENITH CORPORATE PARK JALAN SS7/26, 47301 PETALING JAYA SELANGOR TEL 03-7886 4877 GST NO: 001076076544 TAX INVOICE OrderNo#001-1112563 27/06/18 Cashier : WINNIE SET C RM49.90 49.90 SR 3 HERBAL TEA / BARLI MADU 6.00 SR Item Count 4 SUBTOTAL : 55.90 SRVr 5% 2.80 TOTAL: 58.70 Payment Details CASH 100.00 CASH CHANGE 41.30 27/06/18 14:30 #001-1112563# WINNIE GST Summary Amount (RM) Tax (RM) SR (@0%) 55.90 0.00 --- JK Thank you Please come again",
+      "ground_truth": {
+        "vendor": "THONG RECIPE",
+        "invoice_date": "2018-06-27",
+        "total": 58.7
+      },
+      "prediction": {
+        "vendor": "THONG RECIPE",
+        "invoice_date": "2018-06-27",
+        "total": 58.7
+      },
+      "raw_output": "{\"vendor\": \"THONG RECIPE\", \"invoice_date\": \"2018-06-27\", \"total\": 58.7}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.57289689999925
+    },
+    {
+      "invoice_text": "318 12 012 LIM SENG THO HARDWARE TRADING No 7. Simpang Off Batu Village. Jalan Ipoh Batu 5. 51200 Kuala Lumpur MALAYSIA Tel & Fax No : 03-6258 7191 03-6258 7191 Company Reg No. :(002231061-T) GST Reg No :001269075968 TAX INVOICE Invoice No.: CS 23304 Date 29/12/2017 11:41 Cashier # LST RM Code SIMEN( S) 3.00 x 2.00 6.00 SR Subtotal 6.00 Total In of GST 6.00 Payment : 6.00 Change Due : 0.00 Total Item(s) : 3 GST Summary Amount (RM) Tax(RM) SR @ 6% 5.66 0.34 0.34 THANK YOU PLEASE COME AGAIN *GOODS SOLD ARE NOT RETURNABLE*",
+      "ground_truth": {
+        "vendor": "LIM SENG THO HARDWARE TRADING",
+        "invoice_date": "2017-12-29",
+        "total": 6.0
+      },
+      "prediction": {
+        "vendor": "LIM SENG THO HARDWARE TRADING",
+        "invoice_date": "2017-12-29",
+        "total": 6
+      },
+      "raw_output": "{\"vendor\": \"LIM SENG THO HARDWARE TRADING\", \"invoice_date\": \"2017-12-29\", \"total\": 6}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.878273299998909
+    },
+    {
+      "invoice_text": "KEDAI UBAT & RUNCIT HONG NING SDN. BHD. (717853-F] (GETID Na : 002006163436] NO.8, JALAN LANG KUNING, KEPONG BARIJ. 32100 KUALA LUMPUR Tel: 03-6273 2163 Bill No : POS/268511 Dato : 24/12/16 2:28:22 PM Cashior : admin Payment : Cash Itorn Qty Price Amount YIJIN FIAN ₡2.83 GS 3.00 3.00 ER TIAN QI @18.87 ST1.00 20.00 20,00 SE GARDENIA CR-CHOCLT @)0.80 933664132 0.85 0.85 SR. MASSIMO DUE-COFFEE (90.80 933673353 0.83 MASSIMO DUE-COFFEE (220.80 933673333 0.83 0.85 ER. Cash Paid 23.55 Card. Paid 0,00 Change 0,00 Round Adj. : 0.00 GET Summary Tax 24.10 1.45 THANK YOU PLEASE COME AGAIN",
+      "ground_truth": {
+        "vendor": "KEDAI UBAT & RUNCIT HONG NING SDN. BHD.",
+        "invoice_date": "2016-12-24",
+        "total": 23.55
+      },
+      "prediction": {
+        "vendor": "U BAT & RUNCIT HONG NGIN SDN. BHD",
+        "invoice_date": "2016-12-24",
+        "total": 23.55
+      },
+      "raw_output": "{\"vendor\": \"U BAT & RUNCIT HONG NGIN SDN. BHD\", \"invoice_date\": \"2016-12-24\", \"total\": 23.55}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.530768399999943
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No.2, Jalan Temenggung 19/9, Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No.: 1136284 Cashier: Nicole Date : 11-05-2018 17:12:34 Description Qty U.price Total TAX Bunga Kekwa 1 x 1.70 1.70 SR Take Away 1 × 0.20 0.20 SR Total QTY: 2 Total (Excluding GST): 1.79 GST payable (6%): 0.11 Total (Inclusive of GST): 1.90 TOTAL : 1.90 CASH : 1.90 GST Summary Amount (RM) _Tax(RM) SR (@ 6%) 1.79 0.11",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-11",
+        "total": 1.9
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-11",
+        "total": 1.9
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-05-11\", \"total\": 1.9}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.362306199998784
+    },
+    {
+      "invoice_text": "AMTECH ELECTRICAL SUPPLIES (001963477-M) (GST ID No 001285423104) 107, JALAN BANDAR RAWANG 2, PUSAT BANDAR RAWANG, 48000 RAWANG SELANGOR D E email: amtech886@yahoo.com Tel/Fax 03 6093 5886 Tax Invoice Bill No POS/27408 Date 27/06/18 5:02:32 PM Cashier : amt Payment : Cash Item Qty Price Amount 30W SUPER T8 LED TUBE*D/L -FNM @16.00 00004285 5 16.00 80.00 SR 2x40W LED F/FITTING (EMPTY)-ITK @14.00 00002348 14.00 56.00 SR Gross Amt : 136.00 GST (6%) : 0.00 Net Amt : 136.00 Received 150.00 Change 14.00 Round Adj 0.00 GST Summary Amount(RM) Tax(RM) SR @ 0% 136.00 0 00 THANK YOU PLEASE COME AGAIN",
+      "ground_truth": {
+        "vendor": "AMTECH ELECTRICAL SUPPLIES",
+        "invoice_date": "2018-06-27",
+        "total": 136.0
+      },
+      "prediction": {
+        "vendor": "AMTECH ELECTRICAL SUPPLIES",
+        "invoice_date": "2018-06-27",
+        "total": 136
+      },
+      "raw_output": "{\"vendor\": \"AMTECH ELECTRICAL SUPPLIES\", \"invoice_date\": \"2018-06-27\", \"total\": 136}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.514908099999957
+    },
+    {
+      "invoice_text": "R cer KEDA IPAN YEW CH JAN 05583085-K) LOT 276 JALAN BANTING 300 DEN( SELANGOR. TEL : 03-87686092 FAX : 03-87686092 GST ID : 000781500416 TAX INVOICE Bil To SUCI ALAM JAYA TRANSPORT O 1 JALAN AMAN 2 TAMAN DESA 43800 DENGKIL SELANGOR 017 CS00010612 Date: 08/03/2018 USER Time: 14:58:00 person Re (GST) (GST) Item S/Price S/Price Amount Tax 101756 10 50 17.49 174.90 SR SIMEN 101870 2 65.00 68.90 137.80 SR PASIR HALUS (D) Total Qty: 12 312.70 Total Sales (Excluding GST) : 295.00 Discount : 0.00 Total GST : 17.70 Rounding : 0.00 Total Sales (Inclusive of GST) : 312.70 CASH : 350.00 Change : 37.30 ST SUMMARY Tax Code % Amt (RM) Tax (RM) SR 6 295.00 17.70 Total : 295.00 17.70 GOODS SOLD ARE NOT RETURNABLE. TANK",
+      "ground_truth": {
+        "vendor": "cer KEDA IPAN YEW CH JAN",
+        "invoice_date": "2018-03-08",
+        "total": 312.7
+      },
+      "prediction": {
+        "vendor": "KERIYAN",
+        "invoice_date": "2018-03-08",
+        "total": 312.7
+      },
+      "raw_output": "{\"vendor\": \"KERIYAN\", \"invoice_date\": \"2018-03-08\", \"total\": 312.7}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.414929399999892
+    },
+    {
+      "invoice_text": "B & BEST RESTAURANT (001610235-P) GST NO. : 001800839168 NO. 12, JALAN SS4C/5, PETALING JAYA SELANGOR DARUL EHSAN TEL : 012-2060 778 ** TAX INVOICE ** BILL NO: 00133886 / POS01 BIZDATE: 19/04/2017 CASHIER: Manager PRINTED: 19/04/2017 12:44:57 PM RM 2 FISHBALL NOODLE @7.00 14.00 2 SUB TOTAL 14.00 GST 6% 0.84 ROUNDING ADJ 0.01 NET TOTAL 14.85 Cash 4.85 CHANGE Staff lach 0.00 Thank You. .. Please Come Again ... https://.facebook.com/B-Best-Restaurant Al. item Will Be Charges GST",
+      "ground_truth": {
+        "vendor": "B & BEST RESTAURANT",
+        "invoice_date": "2017-04-19",
+        "total": 14.85
+      },
+      "prediction": {
+        "vendor": "B & BEST RESTAURANT",
+        "invoice_date": "2017-04-19",
+        "total": 14.85
+      },
+      "raw_output": "{\"vendor\": \"B & BEST RESTAURANT\", \"invoice_date\": \"2017-04-19\", \"total\": 14.85}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.877585000000181
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No.2, Jalan Temenggung 19/9. Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No.: 1126479 Cashier: Thandar Date : 05-05-2018 11:25:29 Description Qty U.price Total TAX Cham (B) 1 × 2.20 2.20 SR Dunhill 1 x 17.00 17.00 SR Take Away 1 × 0.20 0.20 SR Total QTY: 3 Total (Excluding GST): 18.31 GST payable (6%) : 1.09 Total (Inclusive of GST): 19.40 TOTAL : 19.40 CASH : 19.40 GST Summary Amount (RM) Tax (RM) SR (@ 6%) 18.31 1.09",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-05",
+        "total": 19.4
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-05",
+        "total": 19.4
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-05-05\", \"total\": 19.4}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.901190799999313
+    },
+    {
+      "invoice_text": "CROSS CHANNEL NETWORK SDN. BHD. 47, JALAN MERANTI 1, SEK. 3, BANDAR UTAMA BATANG KALI, 44300 BATANG KALI, SELANGOR. Tel : 03-6057 9688 Fax : 03-6057 9678 GST ID : 001151500288 Tax Invoice No. : BTG-050036 Qty RM Tax 20MM HERO PVC CONDUIT PIPE 1 1.80 SR @ 1.7000 15A PVC CONNECTOR@ 1.8000 1 1.91 SR R & B-C/CLIP 8MM X 100PCS 1 3.71 SR CABLE CLIPS @ 3 5000 3\" X 3\" 2862 A1 PVC NUT BOX @ 1 0.53 SR 0.5000 Total Amt Incl. GST @ 6% : 7.95 Rounding Adjustment : Total Amt Payable 7.95 Paid Amount : 10 00 Change 2.05 Total Qty Tender 4.00 GST Summary Amount Tax (RM) (RM) SR @ A 7.50 0.45 Total 7.50 0.45 .... THANK YOU For any enquiry, please e mail us: gowa9688@gmail.com 31/12/2017 10:33:59 AM",
+      "ground_truth": {
+        "vendor": "CROSS CHANNEL NETWORK SDN. BHD.",
+        "invoice_date": "2017-12-31",
+        "total": 7.95
+      },
+      "prediction": {
+        "vendor": "CROSS CHANNEL NETWORK SDN. BHD.",
+        "invoice_date": "2017-12-31",
+        "total": 7.95
+      },
+      "raw_output": "{\"vendor\": \"CROSS CHANNEL NETWORK SDN. BHD.\", \"invoice_date\": \"2017-12-31\", \"total\": 7.95}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.181050099999993
+    },
+    {
+      "invoice_text": "THREE STOOGES BISTRO & CAFE 109, SS21/1A, DAMANSARA UTAMA GST ID : 001661886464 TAX INVOICE TABLE : G7 INV NO: POSO1/00012379 INV DATE: 03/03/2018 CASHIER: CASHIER INV DT: 03/03/2018 10:58:51 PM RM QTY ITEM AMOUNT 1 HH GUINESS 12 GLASSES 1 SUB TOTAL 150.00 SERVICE CHARGE 10% 15 0) GST 6% NET TOTAL 174.90 CASH 200.00 CHANGE 25.10 Tax Summary Amount Tax SVC SERVICE CHARGE 10 150.00 15.00 SR GST 6% 165.00 9.90 Thank You. Plz Come Again K",
+      "ground_truth": {
+        "vendor": "THREE STOOGES",
+        "invoice_date": "2018-03-03",
+        "total": 174.9
+      },
+      "prediction": {
+        "vendor": "THREE STOOGES BISTRO & CAFE",
+        "invoice_date": "2018-03-03",
+        "total": 174.9
+      },
+      "raw_output": "{\"vendor\": \"THREE STOOGES BISTRO & CAFE\", \"invoice_date\": \"2018-03-03\", \"total\": 174.9}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.573777499999778
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KL.) SON BHD (139386 X) Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam, Selangor. Tel: 03- 55423228 Fax:03- 55423213 GST ID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7023F713 VE0514 Date: 23/10/2017 MAKASSAR FRESH MARKET SDN BHD GROUND FLOOR, NO. 4 & 6, JALAN SS 15/46, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan (11900) DD: 23/10/2017 11:52 Description U.P Iss Exc D Sale Amt(RM) O.C. WHITE 2.13 2 1 2.13 WHOLEMEAL 2.78 2 WN P 5.56 BONZ SAVER 2.97 3 8.91 Total 0% supplies: 16.60 CR-CHOCLT 0.72 20 0 0 20 14.40 BUN-SBILIS 0.84 10 1 0 7.56 Total 6% supplies (excl. GST): 21.96 GST: 1.31 Total 6% supplies (Inc. GST): 23.27 Total 0% supplies: 16.60 Total Payable: 39.87 E.&.O.E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax claims, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KL.) SON BHD",
+        "invoice_date": "2017-10-23",
+        "total": 39.87
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KL.) SON BHD",
+        "invoice_date": "2017-10-23",
+        "total": 39.87
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KL.) SON BHD\", \"invoice_date\": \"2017-10-23\", \"total\": 39.87}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.948296000000482
+    },
+    {
+      "invoice_text": "THE TOAST F&B SDN BHD (965752-T) LOT 211082111 JALAN PERMAS UTARA BANDAR BARU PERMAS 81750 JOHOR BAHRU JOHOR Tel: 07-3886880 GST ID No 002069884928 TAX INVOICE PS8418053885 11/05/2018 S/F: POS Loc: PMS Walk In Table: 27 Qty U.Price Disc Amount 711 WM TUNA 1 5.00 0.00 5.00 S 224 CANTONESE 1 10.00 0.00 10.00 S 220Z TIA KAMPUNG 1 10.40 0.00 10.40 S 301 KOPI - HOT 2 2.80 0.00 5.60 S Total Items: 4 Sub Total: 31.00 Less Discount: 0.00 Round: 0.00 Total Due (GST Inc): 31.00 Paid: Cash 51.00 Change: 20.00 S:GST(6%) 29.24 1.76 Please Come Again! 11/05/2018 08:36:58 pm",
+      "ground_truth": {
+        "vendor": "THE TOAST F&B SDN BHD",
+        "invoice_date": "2018-05-11",
+        "total": 31.0
+      },
+      "prediction": {
+        "vendor": "TOAST F&B SDN BHD",
+        "invoice_date": "2018-05-11",
+        "total": 31.0
+      },
+      "raw_output": "{\"vendor\": \"TOAST F&B SDN BHD\", \"invoice_date\": \"2018-05-11\", \"total\": 31.0}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.307222900000852
+    },
+    {
+      "invoice_text": "A02061 YHM Aeon Tebrau City S117, Second Floor, Aeon Tebrau City, 1, Jalan Desa Tebrau, Taman Desa Tebrau, 81100 Johor Bahru, Johor. 002105827328 * TAX INVOICE * Order No. 1000219 11/03/2018 06:20 PM Receipt No. :003-1220815 Pax: 1 Cashier : Cashier Eat In ---- - Item Qty U.Price Amount Tax FG-A00019 1 1.50 1.50 SR Green Tea FG-H00001 8.80 8.80 SR Kake Udon R FG-H00100 2.80 2.80 SR Enoki Tempura SubTotal .. 13.10 Total 13.10 TOTAL:MYR 13.10 Total Excluded Tax 12.36 0.7 Payment Details Cash 20.10 Cash Change 7.00 Tax Summary Tax Code % Amount (MYR) Tax(MYR) SR 1º 36 0.74 **** Thank You **** Please Come Again.",
+      "ground_truth": {
+        "vendor": "YHM Aeon Tebrau City",
+        "invoice_date": "2018-03-11",
+        "total": 13.1
+      },
+      "prediction": {
+        "vendor": "YHM",
+        "invoice_date": "2018-03-11",
+        "total": 13.1
+      },
+      "raw_output": "{\"vendor\": \"YHM\", \"invoice_date\": \"2018-03-11\", \"total\": 13.1}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.130216999999902
+    },
+    {
+      "invoice_text": "99 SPEED MART S/B (519537-X) LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1249-TMN PANDAN CAHAYA GST ID. NO : 000181747712 INVOICE NO : 18314/102/T0422 06:20PM 568008 20-02-18 8991 NUTRI PLUS TELUR SEGAR RM9.90 z Total Sales (Inclusive GST) RM 9.90 CASH RM 10.00 CHANGE RM .10 GST Summary Amount (RM) Tax (RM) z = 0% 9.90 .00 Thank You. Please come again Keep the invoice for applicable returns",
+      "ground_truth": {
+        "vendor": "99 SPEED MART S/B",
+        "invoice_date": "2018-02-20",
+        "total": 9.9
+      },
+      "prediction": {
+        "vendor": "SPEED MART S/B",
+        "invoice_date": "2018-02-20",
+        "total": 9.9
+      },
+      "raw_output": "{\"vendor\": \"SPEED MART S/B\", \"invoice_date\": \"2018-02-20\", \"total\": 9.9}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.726295899999968
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KL.) SDN BHD (139386 X) Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam, Selangor. Tel: 03- 55423228 Fax:03- 55423213 GST ID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7022F710 VE0514 Date: 22/10/2017 MAKASSAR FRESH MARKET SON BHD GROUND FLOOR, NO. 4 & 6, JALAN SS 15/48, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan (11900) DD: 22/10/2017 11:44 Description U.P Iss Exc D Sale Amt(RM) O.C. WHITE 2.13 3 0 3 6.39 WHOLEMEAL 2.78 3 1 0 2 5.56 0.0 JUMBO 2.97 3 5 -2 -5.94 Total 0% supplies: 6.01 TWIG-CHOC 1.33 20 0 0 20 26.60 Total 6% supplies (excl. GST): 26.60 GST: 1.60 Total 6% supplies (Inc. GST): 28.20 Total 0% supplies: 6.01 Total Payable: 34.21 E.&.O. E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax claims, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KL.) SDN BHD",
+        "invoice_date": "2017-10-22",
+        "total": 34.21
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KL.) SDN BHD",
+        "invoice_date": "2017-10-22",
+        "total": 34.21
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KL.) SDN BHD\", \"invoice_date\": \"2017-10-22\", \"total\": 34.21}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.244506900000488
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No. 2, Jalan Temenggung 19/9, Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No. : 1126679 Cashier: Nicole Date : 05-05-2018 13:16:46 Description Qty U. price Total TAX Teh (B) 2 × 2.20 4.40 SR Nescafe (B) 1 × 2.60 2. 60 SR Take Away 3 × 0. 20 0. 60 SR Total QTY: 6 Total (Excluding GST) : 7.18 GST payable (6%) : 0.42 Total (Inclusive of GST) : 7.60 TOTAL : 7.60 CASH : 7.60 GST Summary Amount (RM) Tax (RM) SR (@ 6%) 7.18 0.42",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-05",
+        "total": 7.6
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-05",
+        "total": 7.6
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-05-05\", \"total\": 7.6}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.814969900000506
+    },
+    {
+      "invoice_text": "HON HWA HARDWARE TRADING Company Reg. No. : 001055194X NO 37, JALAN MANIS 7, TAMAN SEGAR, 56100 CHERAS, KUALA LUMPUR. +603-9130 2672 GST Reg : 001125220352 TAX INVOICE CB#: 69379 11/02/2017 9:35:48 AM M# : C1-0 Cashier : cash3 - Ofy Description Price Total(RM; 1.38 3/4\" ALUMINIUM ROD 5.80 19.60 SR Item Discount 0.00 1.38 Type: 1 Total 19.60 Discount: 0.00 Rounding Adj 0.00 Total Inclusive GST: 19.60 CASH 19.60 GST Summary Code % Net Amt GST Total(RM) SR SR 18.49 1.11 19.60 Total 18.49 1.11 19.60 Thank you ! & Please come again !! Goods sold are not returnable for refund or exchange II",
+      "ground_truth": {
+        "vendor": "HON HWA HARDWARE TRADING",
+        "invoice_date": "2017-02-11",
+        "total": 19.6
+      },
+      "prediction": {
+        "vendor": "HON HWA HARDWARE TRADING",
+        "invoice_date": "2017-02-11",
+        "total": 19.6
+      },
+      "raw_output": "{\"vendor\": \"HON HWA HARDWARE TRADING\", \"invoice_date\": \"2017-02-11\", \"total\": 19.6}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.338612800000192
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KL) SDN BHD Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam, Selangor. Tel: 03- 55423228 Fax:03- 55423213 GSTID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7919F712 VI Date: 19/09/2017 MAKASSAR FRESH MARKET SDN BHD GROUND FLOOR, NO. 4 & 6, JALAN SS 15/4B, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan (11900) DD: 19/09/2017 11:09 Description U.P Iss Exc D Sale Amt(RM) O.C. WHITE 2.13 6 4 0 4.26 WHOLEMEAL 2.78 2 3 -1 -2.78 0.C JUMBO 2.97 3 -3 -8.91 Total 0% supplies: -7.43 CR-VANILLA 0.72 10 10 7.20 CR-CORN 0.72 20 0 20 14.40 SQ-CHOCMLT 0.84 8 6.72 Total 6% supplies (excl. GST): 28.32 GST: 1.69 Total 6% supplies (Inc. GST): 30.01 Total 0% supplies: -7.43 Total Payable: 22.58 E.&.O.E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax claims, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-09-19",
+        "total": 22.58
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-09-19",
+        "total": 22.58
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KL) SDN BHD\", \"invoice_date\": \"2017-09-19\", \"total\": 22.58}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.450754499999675
+    },
+    {
+      "invoice_text": "p 8 EIGHT OUNCE COFFEE ca EIGHT OUNCE COFFEE CO. THE GARDENS MALL F.K06, First Floor, The Gardens Mall, Mid Valley City, Lingkaran Syed Putra, 59200 Kuala Lumpur. GST No. 002063339520 Tax Invoice Invoice. No: POS022881 Date: 24-05-2018 4:29 PM Transaction by: Cashier Takeaway No Description Amt (RM) Code Hot Chocolate 13.00 SR 1 Cappucino 13.00 SR 1 Caramel Almond Crepe 13.90 SR Total Sales Inclusive 6% GST (3) 39.90 Total 39.90 Cash 50.00 Change 10.10 GST Summary Amount Tax SR @ GST 6% 37.64 2.26 Thank You Please Come Again! Powered by Genius POS Lor www.geniuspos.com.my",
+      "ground_truth": {
+        "vendor": "EIGHT OUNCE COFFEE CO.",
+        "invoice_date": "2018-05-24",
+        "total": 39.9
+      },
+      "prediction": {
+        "vendor": "EIGHT OUNCE COFFEE",
+        "invoice_date": "2018-05-24",
+        "total": 39.9
+      },
+      "raw_output": "{\"vendor\": \"EIGHT OUNCE COFFEE\", \"invoice_date\": \"2018-05-24\", \"total\": 39.9}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.3448403000002145
+    },
+    {
+      "invoice_text": "Subway#42210-0 Phone 03-78870693 URBAN IDEA SDN BHD (417940-M), A-G-06, DATARAN GLOMAC, JALAN SS6/5A, PUSAT BANDAR KELANA JAYA, 47301 PETALING JAYA, SELANGOR, Malaysia Served by: JOSEPH 14/02/2018 11:13:31 Tax Invoice# 1/A-42210-138075 GST ID: 000220499968 Qty Size Item Price 1 (MY) EDV Meal RM11.90 6\" -Meatball Sub -16oz Fountain Drink -1 Cookies Total (Eat In) RM11.90 Cash RM11.90 Change 11- 90 RM0.00 Tax Info: GST 6% (6%) RMO.67 Total-Excl-GST RM11.23 Take our 1 Minute Survey at www.tellsubway.my and get a FREE COOKIE with next purchase.Redemption of 1 cookie per transaction",
+      "ground_truth": {
+        "vendor": "URBAN IDEA SDN BHD",
+        "invoice_date": "2018-02-14",
+        "total": 11.9
+      },
+      "prediction": {
+        "vendor": "URBAN IDEA SDN BHD",
+        "invoice_date": "2018-02-14",
+        "total": 11.23
+      },
+      "raw_output": "{\"vendor\": \"URBAN IDEA SDN BHD\", \"invoice_date\": \"2018-02-14\", \"total\": 11.23}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": false
+      },
+      "latency_seconds": 6.523450100001355
+    },
+    {
+      "invoice_text": "A0 4012 UNIHAKKA INTERNATIONAL SDN BHD 05 Apr 2018 18:25 (867388-U) 12, Jalan Tampoi 7/4,Kawasan Perindustrian Tampoi, 81200 Johor Bahru, Johor TAX INVOICE Invoice # : OR18040502160302 Item Qty Total SR 100100000031 - 3 Vege $4.40 1 $4.40 SR 100100000064-Add Vegetable $0.50 1 $0.50 SR 100100000065-Add Meats $0.90 1. $0.90 SR 100100000015- Vegetable $1.10 1 $1.10 Total Amount: $6.90 GST @6%: $0.39 Nett Total: $6.90 Payment Mode Amount CASH $6.90 Change $0.00 GST Summary Amount($) Tax($) SR = GST @6% 6.51 0.39 GST REG #000656195584 BAR WANG RICE@PERMAS JAYA (Price Inclusive Of GST) Thank You & Come Again! Like and Follow Us on Facebook! Facebook.com/BarWangRice",
+      "ground_truth": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-04-05",
+        "total": 6.9
+      },
+      "prediction": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-04-05",
+        "total": 6.9
+      },
+      "raw_output": "{\"vendor\": \"UNIHAKKA INTERNATIONAL SDN BHD\", \"invoice_date\": \"2018-04-05\", \"total\": 6.9}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.027460400000564
+    },
+    {
+      "invoice_text": "UNIHAKKA INTERNATIONAL SDN BHD 23 May 2018 18:33 (867388-U) 12, Jalan Tampoi 7/4,Kawasan Perindustrian Tampoi, 81200 Johor Bahru, Johor TAX INVOICE Invoice # : OR18052302160264 Item Qty Total SR 100100000031- 3 Vege $4.40 1 $4.40 SR 100100000009- Seafood (M) $4.80 1 $4.80 Total Amount: $9.20 GST @6%: $0.52 Nett Total: $9.20 Payment Mode Amount CASH $9.20 Change $0.00 GST Summary Amount($) Tax($) SR = GST @6% 8.68 0.52 GST REG #000656195584 BAR WANG RICE@PERMAS JAYA (Price Inclusive Of GST) Thank You & Come Again! Like and Follow Us on Facebook! Facebook.com/BarWangRice",
+      "ground_truth": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-05-23",
+        "total": 9.2
+      },
+      "prediction": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-05-23",
+        "total": 9.2
+      },
+      "raw_output": "{\"vendor\": \"UNIHAKKA INTERNATIONAL SDN BHD\", \"invoice_date\": \"2018-05-23\", \"total\": 9.2}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.23527439999998
+    },
+    {
+      "invoice_text": "SANYU STATIONERY SHOP NO. 31G&33G, JALAN SETIA INDAH X ,U13/X 40170 SETIA ALAM Mobile /Whatsapps : +6012-918 7937 Tel: +603-3362 4137 GST ID No: 001531760640 TAX INVOICE Owned By : SANYU SUPPLY SDN BHD (1135772-K) CASH SALES COUNTER 1. 2012-0043 JOURNAL BOOK 80PGS A4 70G CARD COVER (SJB-4013) 1 × 3.3000 3.30 SR Total Sales Inclusive GST @6% 3.30 Discount 0.00 Total 3.30 Round Adj 0.00 Final Total 3.30 : == == CASH 5.00 CHANGE 1.70 GST Summary Amount(RM) Tax(RM) SR @ 6% 3.11 0.19 INV NO: CS-SA-0076015 Date : 05/04/2017 Goods sold are not Returnable & Refundable THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN. TERIMA KASIH SILA DATANG LAGI ** PLEASE KEEP THIS RECEIPT FOR PROVE OF PURCHASE DATE FOR I.T PRODUCT WARRANTY PURPOSE ** Follow us in Facebook : Sanyu.Stationery",
+      "ground_truth": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-04-05",
+        "total": 3.3
+      },
+      "prediction": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-04-05",
+        "total": 3.3
+      },
+      "raw_output": "{\"vendor\": \"SANYU STATIONERY SHOP\", \"invoice_date\": \"2017-04-05\", \"total\": 3.3}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.848077200000262
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KL) SDN BHD (139386 X) Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam, Selangor. Tel: 03-55423228 Fax:03- 55423213 GST ID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7723F712 VE0514 Date: 23/07/2017 MAKASSAR FRESH MARKET SON BHD GROUND FLOOR, NO. & 6, JALAN SS 15/4B, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan(11900) DD: 23/07/2017 11:23 Description U.P Iss Exc D Sale Amt(RM) O.C. WHITE 2.13 15+ 4+ 0 11. 23.43 WHOLEMEAL 2.78 6º 1: 0 5 13.90 O.C JUMBO 2.97 7. 0 -2 -5.94 Total 0% supplies: 31.39 CR-CHOCLT 0.72 0 100 0 -10 -7.20 TWIG-CHOC 1.33 20< 18: 0 2 2.66 Total 6% supplies (excl. GST): -4.54 GST: -0.27 Total 6% supplies (Inc. GST): -4.81 Total 0% supplies: 31.39 Total Payable: 26:58 E.&.O. E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax claims, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-07-23",
+        "total": null
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-07-23",
+        "total": 26.58
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KL) SDN BHD\", \"invoice_date\": \"2017-07-23\", \"total\": 26.58}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": false
+      },
+      "latency_seconds": 8.01080329999968
+    },
+    {
+      "invoice_text": "ENW Hardware Centre (M) Sdn. Bhd. Co. Reg. No.: 795225-A GST Reg. No. : 000155453440 No: G3, BIK G, JIn PJU 1A/3, Ara Damansara, 47301 Petaling Jaya, Selangor Darul Ehsan TEL: 03-7832 6929 , 012-659 9829 13/04/2018 Tax Invoice No. :CS00233394 Cash Sale (Ara D'sara) Tel: 03-7832 6929 H/P: 012-659 9829 Item Qty U.Price RM 001697 5.00 1.00 5.00 SR S10 Starter. 766271 1.00 22.00 22.00 SR 1L. 6627 Seamaster Super Glo. Total Amt Incl. GST @ 6 % : 27 00 Rounding Adjusment : 0.00 Total Amt Payable : 27.00 Total Qty Tender : 6 GST Summary Amount (RM) GST (RM) SR = 6 % 25.47 1.53 POINT : 0.00 *Goods sold are not returnable Thank you for shopping at ENW Hardware Centre (M) Sdn 33hd. buy path",
+      "ground_truth": {
+        "vendor": "ENW Hardware Centre (M) Sdn. Bhd.",
+        "invoice_date": "2018-04-13",
+        "total": 27.0
+      },
+      "prediction": {
+        "vendor": "ENW Hardware Centre (M) Sdn. Bhd.",
+        "invoice_date": "2018-04-13",
+        "total": 27.0
+      },
+      "raw_output": "{\"vendor\": \"ENW Hardware Centre (M) Sdn. Bhd.\", \"invoice_date\": \"2018-04-13\", \"total\": 27.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.025951300000088
+    },
+    {
+      "invoice_text": "Aos 040 UNIHAKKA INTERNATIONAL SDN BHD 10 May 2018 18:19 (867388-U) 12, Jalan Tampoi 7/4,Kawasan Perindustrian Tampoi, 81200 Johor Bahru, Johor TAX INVOICE Invoice # : OR18051002160303 Item Qty Total SR 100100000053- Herbal Tea (Iced) $2.00 1 $2.00 SR 100100000013- Rice (S) $0.5 1 $0.50 SR 100100000170- Imported Veggies $1.60 1 $1.60 SR 100100000114-Add Chicken $3.70 1 $3.70 SR 100100000031- 3 Vege $4.40 1 $4.40 Total Amount: $12.20 GST @6%: $0.69 Nett Total: $12.20 Payment Mode Amount CASH $12.20 Change $0.0 GST Summary Amount($) Tax($) SR = GST @6% 11.51 0.69 GST REG #000656195584 BAR WANG RICE @PERMAS JAYA (Price Inclusive Of GST) Thank You & Come Again! Like and Follow Us on Facebook ! Facebook.com/BarWangRice",
+      "ground_truth": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-05-10",
+        "total": 12.2
+      },
+      "prediction": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-05-10",
+        "total": 12.2
+      },
+      "raw_output": "{\"vendor\": \"UNIHAKKA INTERNATIONAL SDN BHD\", \"invoice_date\": \"2018-05-10\", \"total\": 12.2}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.7265701000014815
+    },
+    {
+      "invoice_text": "OF AEON CO. (M) BHD (126926-H) 3RD FLR, AEON TAMAN MALURI SC JLN JEJAKA, TAMAN MALURI CHERAS, 55100 KUALA LUMPUR GST ID : 002017394688 SHOPPING HOURS MON-SUN: 1000 HRS - 2200 HRS VALUED CUSTOMER: 1130307913 1× 000005469765 6.65SR TOPVALU FLOOR C 1× 000001101575 5.60SR CIF REGULAR 50 Sub-total 12.25 Total Sales Incl GST 12.25 Total After Adj Incl GST 12.25 CASH 50.00 Item Count 2 Change Amt 37.75 Invoice No: 2018031430090060035 GST Summary Amount Tax SR @ 6% 11.55 0.70 Total 11.55 0.70 14/03/2018 12:43 3009 006 0060035 0284846 AMIRUL",
+      "ground_truth": {
+        "vendor": "AEON CO. (M) BHD",
+        "invoice_date": "2018-03-14",
+        "total": 12.25
+      },
+      "prediction": {
+        "vendor": "AEON CO. (M) BHD",
+        "invoice_date": "2018-03-14",
+        "total": 12.25
+      },
+      "raw_output": "{\"vendor\": \"AEON CO. (M) BHD\", \"invoice_date\": \"2018-03-14\", \"total\": 12.25}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.336378400001195
+    },
+    {
+      "invoice_text": "SANYO STATIONERY SHOP NO. 31G&33G, JALAN SETIA INDAH X U13/X 40170 SETIA ALAM Mobile /Whatsapps : +6012-918 7937. Tel: +603-3362 4137 GST ID No: 001531760640 - TAX INVOICE Owned By : SANYU SUPPLY SON BHD (1135772-K) CASH SALES COUNTER 1. 5000-0001 PHOTOCOPY SERVICES - A4 SIZE 100 X 0.1000 10.00 SR 2. 9100-0007 CUTTING CHARGES 1 × 2.0000 2.00 SR Total Sales Inclusive GST @6% 12.00 Discount 0.00 Total 12.00 Round Adj 0.00 Final Total 12.00 CASH 15.00 CHANGE 3.00 GST Summary Amount(RM) Tax(RM) SR @ 6% 11.32 0.68 INV NO: CS-SA-0112280 Date : 20/09/2017 Goods sold are not Returnable & Refundable THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN. TERIMA KASIH SILA DATANG LAGi ** PLEASE KEEP THIS RECEIPT FOR PROVE OF PURCHASE DATE FOR IT PRODUCT WARRANTY PURPOSE ** Follow us in Facebook : Sanyu.Stationery",
+      "ground_truth": {
+        "vendor": "SANYO STATIONERY",
+        "invoice_date": "2017-09-20",
+        "total": 12.0
+      },
+      "prediction": {
+        "vendor": "SANYO STATIONERY SHOP",
+        "invoice_date": "2017-09-20",
+        "total": 12.0
+      },
+      "raw_output": "{\"vendor\": \"SANYO STATIONERY SHOP\", \"invoice_date\": \"2017-09-20\", \"total\": 12.0}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.449614799999836
+    },
+    {
+      "invoice_text": "BREWERY TAP Owner by Castle Blue S/B (1035693-T) GST No : 002108047360 Avtivo Plaza, Lot B-F-11, Block B Nol. Jalan PJU 9/1,D'sara Avevue Bandar Sri D'sara, 52000 KL TEL: +603-62629219 * GUEST CHECK * Table No: D06 Order No : 11649 Date : 30/03/2018 # 8:13 PM Cashier : ORDER LOGIN Waiter : Harry, Paing PRN ON : 30/03/2018 11:18 PM --- ---- - - QTY ITEM RM --- *** Dine In *** 1 Tiger 2 Bucket - HH 95.00 SR 2 Tiger Bucket- HH Chicken wings 22.00 SR French Fries 12.00 SR Tiger Bucket- HH 50.00 SR 4 SubTotal 179.00 GST 06%: 10.74 Rounding Adj 0.01 Net Total 189.75 ------- - *** 30/03/2018 11:11 PM *** -- Tax Summary Amount Tax SR:GST @6% 179.00 10.74 THANK YOU, PLEASE COME AGAIN Goods Sold Are Non Refundable K",
+      "ground_truth": {
+        "vendor": "Owner by Castle Blue S/B",
+        "invoice_date": "2018-03-30",
+        "total": 189.75
+      },
+      "prediction": {
+        "vendor": "Brewery Tap Owner",
+        "invoice_date": "2018-03-30",
+        "total": 189.75
+      },
+      "raw_output": "{\"vendor\": \"Brewery Tap Owner\", \"invoice_date\": \"2018-03-30\", \"total\": 189.75}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.003174800000124
+    },
+    {
+      "invoice_text": "CP YONG CEN ENTERPRISE 9. JALAN SUBANG JASA 3, 40150 SHAH ALAM, SELANGOR. TEL: 012-9719493 GST NO: 001147981824 CASH -- RECEIPT #: C500038502 DATE: 21/05/2017 SALESPERSON : TIME: 07:50:00 COUNTER : ITEM QTY WP AMOUNT 9555211100434 100 0.55 55.00 ZRL:IKAN BILIS PEK BOOT PUTIH 100G 9555223500307 4 50.00 50.00 SR:FEI YAN BRAND YOUNG CORN 425G (5 TOTAL QUANTITY 101 SUB-TOTAL 105.00 DISC 0.00 GST 3.00 TAX 0.00 ROUNDING 0.00 TOTAL 108.00 108 /2 CASH 108.00 CHANGE 0.00 GOODS SOLD ARE NOT RETURNABLE, THANK YOU.",
+      "ground_truth": {
+        "vendor": "YONG CEN ENTERPRISE",
+        "invoice_date": "2017-05-21",
+        "total": 108.0
+      },
+      "prediction": {
+        "vendor": "YONG CEN ENTERPRISE",
+        "invoice_date": "2017-05-21",
+        "total": 108
+      },
+      "raw_output": "{\"vendor\": \"YONG CEN ENTERPRISE\", \"invoice_date\": \"2017-05-21\", \"total\": 108}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.923432100000355
+    },
+    {
+      "invoice_text": "R KEDAI PAPAN YEW CHUAN (0005583085-K) LOT 276 JALAN BANTING 43800 DENGKIL, SELANGOR. TEL : 03-87686092 FAX : 03-87686092 GST ID : 000781500416 TAX INVOICE Bill To : SUCI ALAM JAYA TRANSPORT NO 1 JALAN AMAN 2 TAMAN DESA 43800 DENGKIL SELANGOR 017-6057770 Doc No. : CS00010527 Date: 06/03/2018 Cashier : USER Time: 08:58:00 Salesperson : Ref.: (GST) (GST) Item Qty S/Price S/Price Amount Tax 101869 2 60.00 63.60 127.20 SR PASIR KASAR (D) Total Qty: 2 127.20 Total Sales (Excluding GST) : 120.00 Discount : 0.00 Total GST : 7.20 Rounding : 0.00 Total Sales (Inclusive of GST) : 127.20 CASH 150.00 Change : 22.80 GST SUMMARY Tax Code % Amt (RM) Tax (RM) SR 6 120.00 7.20 Total : 120.00 7.20 GOODS SOLD ARE NOT RETURNABLE, THANK YOU.",
+      "ground_truth": {
+        "vendor": "KEDAI PAPAN YEW CHUAN",
+        "invoice_date": "2018-03-06",
+        "total": 127.2
+      },
+      "prediction": {
+        "vendor": "R KEDAI PAPAN YEW CHUAN",
+        "invoice_date": "2018-03-06",
+        "total": 127.2
+      },
+      "raw_output": "{\"vendor\": \"R KEDAI PAPAN YEW CHUAN\", \"invoice_date\": \"2018-03-06\", \"total\": 127.2}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.3949589999992895
+    },
+    {
+      "invoice_text": "SANYU STATIONERY SHOP NO. 31G&33G, JALAN SETIA INDAH X ,U13/X 40170 SETIA ALAM Mobile /Whatsapps : +6012-918 7937 Tel: +603-3362 4137 GST ID No: 001531760640 Owned By : TAX INVOICE SANYU SUPPLY SDN BHD (1135772-K) CASH SALES COUNTER 1. 2015-0156 WHITE MEMO PAD 3.5\"x5\" S- 3550 2 × 1.0000 2.00 SR Total Sales Inclusive GST @6% 2.00 Discount 0.00 Total 2.00 Round Adj 0.00 Final Total 2.00 :: : : CASH 2.00 CHANGE 0.00 GST Summary Amount(RM) Tax(RM) SR @ 6% 1.89 0.11 INV NO: CS-SA-0124981 Date : 17/11/2017 Goods sold are not Returnable & Refundable THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN. TERIMA KASIH SILA DATANG LAGI ** PLEASE KEEP THIS RECEIPT FOR PROVE OF PURCHASE DATE FOR I.T PRODUCT WARRANTY PURPOSE ** Follow us in Facebook : Sanyu.Stationery",
+      "ground_truth": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-11-17",
+        "total": 2.0
+      },
+      "prediction": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-11-17",
+        "total": 2.0
+      },
+      "raw_output": "{\"vendor\": \"SANYU STATIONERY SHOP\", \"invoice_date\": \"2017-11-17\", \"total\": 2.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.864454200000182
+    },
+    {
+      "invoice_text": "31803017 AEON CO. (M) BHD (126926-H) 3RD FLR, AEON TAMAN MALURI SC JLN JEJAKA, TAMAN MALURI CHERAS, 55100 KUALA LUMPUR GST ID : 002017394688 SHOPPING HOURS SUN-THU: 1000 HRS - 2200 HRS FRI-SAT: 1000 HRS - 2300 HRS VALUED CUSTOMER: 1370001392 1× 000002781709 15.50SR BIO ZIP POWDER 1× 000002781709 15.50SR BIO ZIP POWDER Sub total 31.00 Total Sales Incl GST 31.00 Total After Adj Incl GST 31.00 CASH 50.00 Item Count 2 Change Amt 19.00 Invoice No: 2018030910080010555 GST Summary Amount Tax SR @ 6% 29.24 1.76 Total 29.24 1.76 09/03/2018 18:54 1008 001 0010555 0305101 HALINA AEON BANDAR PUCHONG TEL 1-300-80-AEON (2366) THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN",
+      "ground_truth": {
+        "vendor": "AEON CO. (M) BHD",
+        "invoice_date": "2018-03-09",
+        "total": 31.0
+      },
+      "prediction": {
+        "vendor": "AEON CO. (M) BHD",
+        "invoice_date": "2018-03-09",
+        "total": 31.0
+      },
+      "raw_output": "{\"vendor\": \"AEON CO. (M) BHD\", \"invoice_date\": \"2018-03-09\", \"total\": 31.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.720183299999917
+    },
+    {
+      "invoice_text": "Tax Invoice FLORISM DE ART (940075-X) LOT 2.70.00, LEVEL 2, PAVILION KUALA LUMPUR, 168, JALAN BUKIT BINTANG, 55100 KUALA LUMPUR, MALAYSIA. Tel : 03-2142 3855 GST Reg.: 000397606912 Document No. : T01005445 Date : 14/01/2018 05:03:35 PM Debtor : Member : Promoter : Terminal : TO1 Cashier : ADMIN DESC U. PRICE Disc AMOUNT TAX QTY RM RM CODE OPEN 1 NO * 750.00 750.00 SR Sub Total (Exclusive GST) : 707.55 GST 6% : 42.45 Rounding Adj. : 0.00 Rounded Total (RM): 750.00 Credit Card 750.00 GST Summary Amount(RM) Tax(RM) SR @ 6 % 707.55 42.45",
+      "ground_truth": {
+        "vendor": "FLORISM DE ART",
+        "invoice_date": "2018-01-14",
+        "total": 750.0
+      },
+      "prediction": {
+        "vendor": "FLORISM DE ART",
+        "invoice_date": "2018-01-14",
+        "total": 750.0
+      },
+      "raw_output": "{\"vendor\": \"FLORISM DE ART\", \"invoice_date\": \"2018-01-14\", \"total\": 750.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.3263253000004624
+    },
+    {
+      "invoice_text": "SANYU STATIONERY SHOP NO. 31G&33G, JALAN SETIA INDAH X , U13/X 40170 SETIA ALAM Mobile /Whatsapps : +6012-918 7937 Tel: +603-3362 4137 GST ID No: 001531760640 TAX INVOICE Owned By : SANYU SUPPLY SDN BHD (1135772-K) CASH SALES COUNTER 1. 5000-0001 PHOTOCOPY SERVICES - A4 SIZE 50 × 0.1000 5.00 SR Total Sales Inclusive GST @6% 5.00 Discount 0.00 Total 5.00 Round Adj 0.00 Final Total 5.00 CASH 5.00 CHANGE 0.00 GST Summary Amount(RM) Tax(RM) SR @ 6% 4.72 0.28 INV NO: CS-SA-0097493 Date : 19/07/2017 Goods sold are not Returnable & Refundable THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN. TERIMA KASIH SILA DATANG LAGI ** PLEASE KEEP THIS RECEIPT FOR PROVE OF PURCHASE DATE FOR I.T PRODUCT WARRANTY PURPOSE ** Follow us in Facebook : Sanyu.Stationery",
+      "ground_truth": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-07-19",
+        "total": 5.0
+      },
+      "prediction": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-07-19",
+        "total": 5.0
+      },
+      "raw_output": "{\"vendor\": \"SANYU STATIONERY SHOP\", \"invoice_date\": \"2017-07-19\", \"total\": 5.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.022634799999651
+    },
+    {
+      "invoice_text": "3 18 0 2 0 1. 6 SYARIKAT PERNIAGAAN GIN KEE (81109-A) NO 290, JALAN AIR PANAS, SETAPAK, 53200, KUALA LUMPUR. TEL : 03-40210276 GST ID : 000750673920 SIMPLIFIED TAX INVOICE CASH Doc No CS00013251 Date: 12/02/2018 Cashier USER Time: 14:31:00 Salesperson Ref. : Item Qty S/Price Amount Tax 1099 3 90.10 270.30 SR 110MM X 5.8M UNDERGROUND PIPE Total Qty: 3 270.30 Total Sales (Excluding GST) : 255.00 Discount : 0.00 Total GST : 15.30 Rounding : 0.00 Total Sales (Inclusive of GST) : 270.30 CASH : 270.30 Change : 0.00 GST SUMMARY Tax Code Amt (RM) Tax (RM) SR 6 255.00 15.30 Total : 255.00 15.30 GOODS SOLD ARE NOT RETURNABLE, THANK YOU.",
+      "ground_truth": {
+        "vendor": "SYARIKAT PERNIAGAAN GIN KEE",
+        "invoice_date": "2018-02-12",
+        "total": 270.3
+      },
+      "prediction": {
+        "vendor": "SYARIKAT PERNIAGAAN GIN KEE",
+        "invoice_date": "2018-02-12",
+        "total": 270.3
+      },
+      "raw_output": "{\"vendor\": \"SYARIKAT PERNIAGAAN GIN KEE\", \"invoice_date\": \"2018-02-12\", \"total\": 270.3}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.303000600000814
+    },
+    {
+      "invoice_text": "SANYU STATIONERY SHOP NO. 31G&33G, JALAN SETIA INDAH X ,U13/X 40170 SETIA ALAM Mobile /Whatsapps : +6012-918 7937 Tel: +603-3362 4137 GST ID No: 001531760640 TAX INVOICE Owned By : SANYU SUPPLY SDN BHD (1135772-K) CASH SALES COUNTER 1. 2022-0124 DEFLECT-O 120 × 55MM L SHAPE TAG HOLDER (LANDSCAPE) (DDKRL-120X55) 5 X 2.2000 11.00 SR 2. 2020-0231 7\" POP MOBILE STAND (M- 1755) 5 × 4.5000 22.50 SR Total Sales Inclusive GST @6% 33.50 Discount 0.00 Total 33.50 Round Adj 0.00 Final Total 33.50 CASH 50.00 CHANGE 16.50 GST Summary Amount(RM) Tax(RM) SR @ 6% 31.60 1.90 INV NO: CS-SA-0121370 Date : 01/11/2017 Goods sold are not Returnable & Refundable THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN. TERIMA KASIH SILA DATANG LAGI ** PLEASE KEEP THIS RECEIPT FOR PROVE OF PURCHASE DATE FOR I.T PRODUCT WARRANTY PURPOSE ** Follow us in Facebook : Sanyu.Stationery",
+      "ground_truth": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-11-01",
+        "total": 33.5
+      },
+      "prediction": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-11-01",
+        "total": 33.5
+      },
+      "raw_output": "{\"vendor\": \"SANYU STATIONERY SHOP\", \"invoice_date\": \"2017-11-01\", \"total\": 33.5}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.579578200000469
+    },
+    {
+      "invoice_text": "- Your order number is 264 - Golden Arches Restaurants Sdn Bhd (65351-M) Level 6, Bangunan TH, Damansara Uptown3 No.3, Jalan SS21/39, 47400 Petaling Jaya Selangor (GST ID No: 000504664064) McDonald's Kota Damansara DT(#178) Tel No. 03-6156-2180 TAX INVOICE MFY Side 1 INV# 001780200112117 ORD #64 -REG #2- 25/12/2016 13:51:47 QTY ITEM TOTAL 2 L FiletOFish 21.18 2 L Coke NO Ice 2 L Fries 1 6Nuggets 7.10 1 Barbecue Sauce 1 Small Cone 1.00 Eat-In Total (incl GST) 29.28 Rounding Adjust 0.02 Total Rounded 29.30 Cash Tendered 50.00 Change 29.32 20.70 TOTAL INCLUDES 6% GST 1.66 Thank You and Please Come Again. Customer Service Hotline : 03-2726-5600",
+      "ground_truth": {
+        "vendor": "Golden Arches Restaurants Sdn Bhd",
+        "invoice_date": "2016-12-25",
+        "total": 29.3
+      },
+      "prediction": {
+        "vendor": "Golden Arches Restaurants Sdn Bhd",
+        "invoice_date": "2016-12-25",
+        "total": 29.3
+      },
+      "raw_output": "{\"vendor\": \"Golden Arches Restaurants Sdn Bhd\", \"invoice_date\": \"2016-12-25\", \"total\": 29.3}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.0904987000012625
+    },
+    {
+      "invoice_text": "SANYO STATIONERY SHOP NO. 31G&33G, JALAN SETIA INDAH X , U13/X 40170 SETIA ALAM Mobile /Whatsapps : +6012-918 7937 Tel: +603-3362 4137 GST ID No: 001531760640 TAX INVOICE Owned By : SANYU SUPPLY SDN BHD (1135772-K) CASH SALES COUNTER 1. 2012-0029 RESTAURANT ORDER CHIT NCR 3.5\"x6\" 2 × 2.9000 5.80 SR Total Sales Inclusive GST @6% 5.80 Discount 0.00 Total 5.80 Round Adj 0.00 Final Total 5.80 CASH 6.00 CHANGE 0.20 GST Summary Amount(RM) Tax(RM) SR @ 6% 5.47 0.33 INV NO: CS-SA-0086778 Date : 24/05/2017 Goods sold are not Returnable & Refundable THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN. TERIMA KASIH SILA DATANG LAGI ** PLEASE KEEP THIS RECEIPT FOR PROVE OF PURCHASE DATE FOR I.T PRODUCT WARRANTY PURPOSE ** Follow us in Facebook : Sanyu.Stationery",
+      "ground_truth": {
+        "vendor": "SANYO STATIONERY SHOP",
+        "invoice_date": "2017-05-24",
+        "total": 5.8
+      },
+      "prediction": {
+        "vendor": "SANYO STATIONERY SHOP",
+        "invoice_date": "2017-05-24",
+        "total": 5.8
+      },
+      "raw_output": "{\"vendor\": \"SANYO STATIONERY SHOP\", \"invoice_date\": \"2017-05-24\", \"total\": 5.8}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.059489999999641
+    },
+    {
+      "invoice_text": "NYONYA COLORS @ 1 UTAMA LITTLE CRAVINGS SDN BHD (562007-D) HQ: 7, JIn SS21/34, 47400 PJ TEL-03 77282288 (GST ID 001382293504) MC #01 REG CASHIER 18-03-2018 11:23 TaxInvNo. 1 #000001 KUIH KETAYAP RM2. 70 S ONDEH ONDEH RM2. 95 S YELLOW LAKSA RM11.60 S YELLOW LAKSA RM11.60 S YELLOW LAKSA RM11.60 S AIR SEJUK RJ. 65 S CENDOL RM5. 30 S CHEE CHEONG FUN (SOS) RM7. 20 S 8 No SUBTOTAL RM53. 60 CASH RM100.00 CHANGE RM46. 40 TAXABLE AMOUNT RM50. 57 6% GST RM3. 03 -- THANK YOU !! PLEASE COME AGAIN ======-=--- ---- ---------== ---- ------ ===",
+      "ground_truth": {
+        "vendor": "LITTLE CRAVINGS SDN BHD",
+        "invoice_date": "2018-03-18",
+        "total": null
+      },
+      "prediction": {
+        "vendor": "NYONYA COLORS",
+        "invoice_date": "2018-03-18",
+        "total": 53.6
+      },
+      "raw_output": "{\"vendor\": \"NYONYA COLORS\", \"invoice_date\": \"2018-03-18\", \"total\": 53.6}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": false
+      },
+      "latency_seconds": 5.440915499999392
+    },
+    {
+      "invoice_text": "AMPHAWA THAI TEA & CO. Dimiliki oleh T PLUS F&B SDN. BHD. (1219716-T) PARADIGM MALL LOT NO.: 4F-27 & 4FK-38, 4TH FLOOR TEL : TELEPHONE FAX : FAX GST ID : 000707211264 TAX INVOICE Order No: 197 UFO : 0 Receipt #: CSPD029197 Staff: TAKE AWAY Date 11/05/2018 Cashier: MARIBEL Time: 15:23:00 Description Qty Price Amt Tax M03. THAI MILK TEA - CHA 8.90 8.90 SR YEN Total: Total Sales (Excluding GST) : 3.90 Discount : 0.00 Service Charge 0.00 Total GST : 0.53 Rounding 0.02 Total Sales (Inclusive of GST) 3.45 CASH 10.00 CHANGE 0.55 GST SUMMARY Tax Code % Amt (RM) Tax (RM) SR 6 8.90 0.53 Total : 8.90 0.53 # indicated this tax code belong to service charges. GOODS SOLD ARE NOT RETURNABLE, THANK YOU.",
+      "ground_truth": {
+        "vendor": "Dimiliki oleh T PLUS F&B SDN. BHD.",
+        "invoice_date": "2018-05-11",
+        "total": 3.45
+      },
+      "prediction": {
+        "vendor": "AMPHAWA THAI TEA & CO.",
+        "invoice_date": "2018-05-11",
+        "total": 3.45
+      },
+      "raw_output": "{\"vendor\": \"AMPHAWA THAI TEA & CO.\", \"invoice_date\": \"2018-05-11\", \"total\": 3.45}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.269769300000917
+    },
+    {
+      "invoice_text": "THAI DELICIOUS RESTAURANT NO.22 JALAN PUTERI 2/4 BANDAR PUTERI 47100 PUCHONG, SELANGOR 03-8051 9514 Bill No 01-36870 Table Date 02/02/2017 7:31:08 PM A3 Cashier 123 Pax 4 Description Qty Price Amount 06S BRAISED 20.00 20.00 PORK LEG SMALL 2 32 PHRANAKON 28.00 28.00 SALTED EGG SQUID wiin mijn 3 51 GARLIC FRIED 13.00 13.00 KAILAN am 4 84 THAISTYLE 1 15.00 15.00 KERABU TOFU in 5 130 PLAINRICE 4 1.80 7.20 6 113 COCONUT 6.50 6.50 THAI 7 116 DISTILLED 0.60 0.60 WATER 8 106B COLD - 2.50 2.50 PANDAN GINGER TEA Total : 92.80 Grand Total : 92.80 Cash Received : 100.00 Change : 7.20 AVERAGE / PAX(S) : 23.20 Thank You. Please Come Again.",
+      "ground_truth": {
+        "vendor": "THAI DELICIOUS RESTAURANT",
+        "invoice_date": "2017-02-02",
+        "total": 92.8
+      },
+      "prediction": {
+        "vendor": "THAI DELICIOUS RESTAURANT",
+        "invoice_date": "2017-02-02",
+        "total": 92.8
+      },
+      "raw_output": "{\"vendor\": \"THAI DELICIOUS RESTAURANT\", \"invoice_date\": \"2017-02-02\", \"total\": 92.8}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.736308199999257
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KL) SDN BHD (139386 X) Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam, Selangor. Tel: 03- 55423228 Fax:03- 55423213 GST ID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7803F713 VE0514 Date: 03/08/2017 MAKASSAR FRESH MARKET SDN BHD GROUND FLOOR, NO. 4 & 6, JALAN SS 15/4B, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan(11900) DD: 03/08/2017 11:11 Description U.P Iss Exc D Sale Amt(RM) KAYA-PANDN 2.40 0 2 0 -2 -4.80 Total 6% supplies (excl. GST): -4.80 GST: -0.29 Total 6% supplies (Inc. GST): -5.09 Total Payable: -5.09 E. &.O. E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax claims, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-08-03",
+        "total": -5.09
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-08-03",
+        "total": -5.09
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KL) SDN BHD\", \"invoice_date\": \"2017-08-03\", \"total\": -5.09}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.992657799999506
+    },
+    {
+      "invoice_text": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SIN BND 822737-X NO. 17-G, JALAN SETIA INDAM (X) U13/X, SETIA ALAM, SEKSYEN U13, 40170 SHAH ALAM, TEL: 012 - 6651783 FAX: 03 - 33623608 GST NO: 000394528768 SIMPLIFIED TAX INVOICE CASH RECEIPT #: CSP0397224 DATE: 13/07/2017 SALESPERSON : AH002 TIME: 08:13:00 --- ITEM QTY U/P AMOUNT (RM) (RM) 4060150000005 4.00 4.00 S 15AMP UMS PLUG TOP (SIRIM) TOTAL QUANTITY SUB-TOTAL (GS() 4.00 DISC 0.00 ROUNDING 0.00 TOTAL 4.00 CASH 20.00 CHANGE 16.00 *GST @ 6% INCLUDED IN TOTAL GST SUMMARY CODE AMOUNT TAX/AMT SR 3.77 0.23 TAX TOTAL: 0.23 GOODS SOLD ARE NOT REFUNDABLE THANK YOU FOR CHOOSING US. PLS PROVIDE ORIGINAL BILL POR OOOUS EXCHANGE WITHIN 1 WEBE FROM TRANSACTION GOODS MUST BE IN ORIGINAL SIATE TO BE ENTITLED POR EXCHANGE.",
+      "ground_truth": {
+        "vendor": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SIN BND",
+        "invoice_date": "2017-07-13",
+        "total": 4.0
+      },
+      "prediction": {
+        "vendor": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM)",
+        "invoice_date": "2017-07-13",
+        "total": 4.0
+      },
+      "raw_output": "{\"vendor\": \"AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM)\", \"invoice_date\": \"2017-07-13\", \"total\": 4.0}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.009372799999255
+    },
+    {
+      "invoice_text": "SANYU STATIONERY SHOP NO. 31G&33G, JALAN SETIA INDAH X ,U13/X 40170 SETIA ALAM Mobile /Whatsapps : +6012-918 7937 Tel: +603-3362 4137 GST ID No: 001531760640 TAX INVOICE Owned By : SANYU SUPPLY SDN BHD (1135772-K) CASH SALES COUNTER 1. 2011-0025 MAX STAPLE 10-1M 2 × 1.0000 2.00 SR Total Sales Inclusive GST @6% 2.00 Discount 0.00 Total 2.00 Round Adj 0.00 Final Total 2.00 CASH 2.00 CHANGE 0.00 GST Summary Amount(RM) Tax(RM) SR @ 6% 1.89 0.11 INV NO: CS-SA-0122858 Date : 07/11/2017 Goods sold are not Returnable & Refundable THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN. TERIMA KASIH SILA DATANG LAGI ** PLEASE KEEP THIS RECEIPT FOR PROVE OF PURCHASE DATE FOR I.T PRODUCT WARRANTY PURPOSE ** Follow us in Facebook : Sanyu.Stationery",
+      "ground_truth": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-11-07",
+        "total": 2.0
+      },
+      "prediction": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-11-07",
+        "total": 2.0
+      },
+      "raw_output": "{\"vendor\": \"SANYU STATIONERY SHOP\", \"invoice_date\": \"2017-11-07\", \"total\": 2.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.123473699999522
+    },
+    {
+      "invoice_text": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SON BHD 822737-X NO. 17-G, JALAN SETIA INGAH (X) U13/X, SETIA ALAM, SEKSYEN 013, 40170 SHAH-ALAM, TEL: 012 - 6651783 FAX: 03 - 33623608 GST NO: 000394528768 SIMPLIFIED TAX INVOICE CASH RECEIPT #: CSP0407141 DATE: 22/09/2017 SALESPERSON : AH019 TIME: 15:53:00 ITEM QTY AMOUNT (RM) (RM) 9555019100268 28.00 28.00 S MILUX M268 GAS REGULATOR H/D TOTAL QUANTITY SUB-TOTAL (GST). 28.00 DISC 0.00 ROUNDING 0.00 TOTAL 28.00 CASH 40.00 CHANGE 12.00 *GST @ 6% INCLUDED IN TOTAL GST SUMMARY CODE AMOUNT TAX/AMT SR 26.42 1.58 TAX TOTAL: 1.58 GOODS SOLD ARE NOT REFUNDABLE, THANK YOU FOR CHOOSING US. PLS PROVIDE ORIGINAL BILL FOR GOODS EXCHANGE WITHIN 1 WEEK FROM TRANSACTION GOODS MUST BE IN ORIGINAL STATE TO BE- ENTITLED FOR EXCHANGE.",
+      "ground_truth": {
+        "vendor": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SON BHD",
+        "invoice_date": "2017-09-22",
+        "total": 28.0
+      },
+      "prediction": {
+        "vendor": "AHUAT",
+        "invoice_date": "2017-09-22",
+        "total": 28
+      },
+      "raw_output": "{\"vendor\": \"AHUAT\", \"invoice_date\": \"2017-09-22\", \"total\": 28}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.969955500000651
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No.2, Jalan Temenggung 19/9, Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No.: 1057981 Cashier: Thandar Date 23-03-2018 13:28:55 Description Qty U.price Total TAX Teh (B) - X 2.20 2.20 SR Cham (B) - X 2.20 2.20 SR Bunga Kekwa 1 × 1.70 1.70 SR Take Away 3 x 0.20 0.60 SR Total QTY: 6 Total (Excluding GST): 6.33 GST payable (6%): 0.37 Total (Inclusive of GST): 6.70 TOTAL : 6.70 CASH : 6.70 GST Summary Amount (RM) Tax (RM) SR (@ 6%) 6.33 0.37",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-03-23",
+        "total": 6.7
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-03-23",
+        "total": 6.7
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-03-23\", \"total\": 6.7}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.88473089999934
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KL) SDN BHD (139386 X) Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam Selangor. Tel: 03- 55423228 Fax:03 55423213 GST ID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7923F714 VE05 14 Date: 23/09/2017 MAKASSAR FRESH MARKET SDN BHD GROUND FLOOR, NO. 4 & 6, JALAN SS 15/48, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan (11900) DD: 23/09/2017 11:23 Description U.P Iss Exc D Sale Amt(RM) O.C. WHITE 2.13 5 0 0 5 10.65 Total 0% supplies: 10.65 CR-CORN 0.72 0 25 0 -25 -18.00 CR-B' SCOTCH 0.72 30 30 21.60 Total 6% supplies (excl. GST): 3.60 GST: 0.22 Total 6% supplies (Inc. GST): 3.82 Total 0% supplies: 10.65 Total Payable: 14.47 E.&.O. E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax clauns, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-09-23",
+        "total": 14.47
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-09-23",
+        "total": 14.47
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KL) SDN BHD\", \"invoice_date\": \"2017-09-23\", \"total\": 14.47}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.66112190000058
+    },
+    {
+      "invoice_text": "A06106 NAM SAN SEOUL KOREAN BBQ KOREAN DINE SDN BHD(1077469-V) No 4, Jalan Permas 10/5. Bardar Barn Permas Jaya, 81750 Johor Bahru, Johor. Tel : 07-380 8402 GST ID No. : 000517836800 INVOICE Ref No. 00032375 Table 09 Cashier 1 Qty Description Price Amount M(Budae Jjigae) 70.00 70.00 1 (Kimbab 16.00 16.00 1 (Seafood Pancake) 25.00 25.00 1 (PorkCutlet) 20.00 20.00 2 (SteamedRice) 4.00 8.00 Sub-Total : RM 139.00 Service Charges 10% 13.90 Total : RM 152.90 Paid by CASH 152.90 Total Qty : 6 Change 0.00 * * * * * * Thank You ************ ********** Please come again ********** 19/06/2018 06:56:10 PM",
+      "ground_truth": {
+        "vendor": "KOREAN DINE SDN BHD(1077469-V)",
+        "invoice_date": "2018-06-19",
+        "total": 152.9
+      },
+      "prediction": {
+        "vendor": "SDN BHD",
+        "invoice_date": "2018-06-19",
+        "total": 152.9
+      },
+      "raw_output": "{\"vendor\": \"SDN BHD\", \"invoice_date\": \"2018-06-19\", \"total\": 152.9}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.813972099998864
+    },
+    {
+      "invoice_text": "TUICAR KEPALA GAS ! !! DAPUR AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SON BHU 822737-X NO. 17-G, JALAN SETIA INDAH (X) U13/X, SETIA ALAM, SEKSYEN U13, 40170 SHAH ALAM. TEL: 012 - 6651783 FAX: 03 - 33623608 GST NO: 000394528768 SIMPLIFIED TAX INVOICE CASH RECEIPT #: CSP0404314 DATE: 04/09/2017 SALESPERSON : AH019 TIME: 12:01:00 ITEM QTY U/P AMOUNT (RM) (RM) 9555019100268 28.00 28.00 S MILUX M268 GAS REGULATOR H/D TOTAL QUANTITY SUB-TOTAL (GST) 28.00 DISC 0.00 ROUNDING 0.00 TOTAL 28.00 CASH 40.00 CHANGE 12.00 *GST @ 6% INCLUDED IN TOTAL GST SUMMARY CODE AMOUNT TAX/AMT SR 26.42 6 1.58 TAX TOTAL: 1.58 GOODS SOLD ARE NOT REFUNDABLE, THANK YOU FOR CHOOSING US. PLS PROVIDE ORIGINAL BILL FOR GOODS EXCHANGE WITHIN 1 WEEE FROM TRANSACTION GOODS MUST BE' IN ORIGINAL, STAIR TO LE ENTITLED FOR EXCHANGE.",
+      "ground_truth": {
+        "vendor": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SON BHU",
+        "invoice_date": "2017-09-04",
+        "total": 28.0
+      },
+      "prediction": {
+        "vendor": "SON BHU",
+        "invoice_date": "2017-09-04",
+        "total": 28
+      },
+      "raw_output": "{\"vendor\": \"SON BHU\", \"invoice_date\": \"2017-09-04\", \"total\": 28}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.6042849000004935
+    },
+    {
+      "invoice_text": "PANA JAYA ENTERPRISE NO. 10-G, GROUND FLOOR. JALAN DINAR D. U3/D. TAMAN SUBANG PERDANA. SEK U3. 40150 SHAH ALAM . SELANGOR. TEL:03-7847 2376 FAX: 03-7847 2378 (GST Reg. No : 002069438464) Tax Invoice INV No. : 539405 Qty(s): 2 Date 21-03-2018 10:37:49 Cashier: CASHIER2 Description Qty U price Total TAX 9928 28 IN BASIN 1 × 35.00 35.00 SR TG WFD32 PP BOWL CIN 1 × 70.00 70.00 SR Total (Excluding GST) 99.06 GST payable (6%) : 5.94 Total ( Inclusive of GST) : 105.00 TOTAL : 105.00 CASH : 105.00 GST Summary Amount (AM) Tax (RM) SR (@ 6%) 99.06 5.94 v 105/2 **** Thank You **** Please Come Again Goods Sold Are Not Refundable",
+      "ground_truth": {
+        "vendor": "PANA JAYA ENTERPRISE",
+        "invoice_date": "2018-03-21",
+        "total": 105.0
+      },
+      "prediction": {
+        "vendor": "PANA JAYA ENTERPRISE",
+        "invoice_date": "2018-03-21",
+        "total": 105
+      },
+      "raw_output": "{\"vendor\": \"PANA JAYA ENTERPRISE\", \"invoice_date\": \"2018-03-21\", \"total\": 105}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.946079699999245
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KL) SDN BHD (139386 X) Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam, Selangor. Tel: 03- 55423228 Fax:03- 55423213 GST ID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7929F714 VE0514 Date: 29/09/2017 MAKASSAR FRESH MARKET SON BHD GROUND FLOOR, NO. 4 & 6, JALAN SS 15/48, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan (11900) DD: 29/09/2017 10:23 Description U. P ISS Exc D Sale Amt(RM) O.C. WHITE 2.13 3 1 0 2 4.26 WHOLEMEAL 2.78 3 2 0 1 2.78 O.C JUMBO 2.97 3 1 2 5.94 Total 0% supplies: 12.98 DELICIA-B/SCOTCH 3.72 0 1 0 -1 -3.72 CR-CHOCLT 0.72 20 0 20 14.40 MUFFIN C&W 1.25 9 -9 -11.25 TWG T'MISU 1.33 10 -10 -13.30 Total 6% supplies (excl. GST): -13.87 GST: -0.84 Total 6% supplies (Inc. GST): -14.71 Total 0% supplies: 12.98 Total Payable: -1.73 E.&.0.E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax claims, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-09-29",
+        "total": -1.73
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-09-29",
+        "total": -14.71
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KL) SDN BHD\", \"invoice_date\": \"2017-09-29\", \"total\": -14.71}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": false
+      },
+      "latency_seconds": 7.78860110000096
+    },
+    {
+      "invoice_text": "Burger King Lot SATMZ 23, Mezzanine Level Satellite Building Kuala Lumpur International Airport Dewina Host Sdn Bhd (434286-P) GST ID 000806879232 Tel: 603-87766625 Tax Invoice: 001-731709 Dine In Date: 2018/03/27 23:08:45 Whopper JR. 4 RM40.60 Ice Lemon Tea(L) 2 RM12.80 Coke (L) RM5.30 Americano(L) - RM5.20 Total After Rounding RM63.90 === (Bill Inclusive of 6% GST : RM3.62) CASH RM70.00 Change RM6.10 Thank You, Please Come Again. Free Open Wifi @Burger King No Password Needed 001-2018/03/27 23:39:28 AZLINDA 001-731709 [1]",
+      "ground_truth": {
+        "vendor": "Dewina Host Sdn Bhd",
+        "invoice_date": "2018-03-27",
+        "total": 63.9
+      },
+      "prediction": {
+        "vendor": "Satz",
+        "invoice_date": "2018-03-27",
+        "total": 63.9
+      },
+      "raw_output": "{\"vendor\": \"Satz\", \"invoice_date\": \"2018-03-27\", \"total\": 63.9}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.548538799999733
+    },
+    {
+      "invoice_text": "** Royaltea ** (1199794-K) No. 23, Jalan Sutera Tanjung 8/3, Taman Sutera Utama 81300 Skudai Johor, Malaysia. GST ID : 000344043520 Wi-Fi: 01134229888 TAX INVOICE Invoice No : STU001/59572 Date : 09/05/2018 #1 12:22 PM Cashier : Yu Jie Ref No 50TA PRN ON : 09/05/2018 12:23 PM QTY ITEM RM *** Retail/Takeaway *** 1 Royal Milk Tea 10.90 SR 1 Black Tea 1 Cold 1 Pearl 1 Less Ice 1 50% Sugar 1 SubTotal 10.90 Net Total 10.90 Cash 11.00 CHANGE 0.10 *** 09/05/2018 12:23 PM *** Tax Summary Amount Tax SR: Inclusive of GST @6% 10.28 0.62 THANK YOU, PLEASE COME AGAIN Goods Sold Are Non Refundable",
+      "ground_truth": {
+        "vendor": "Royaltea",
+        "invoice_date": "2018-05-09",
+        "total": 10.9
+      },
+      "prediction": {
+        "vendor": "Royaltea",
+        "invoice_date": "2018-05-09",
+        "total": 10.9
+      },
+      "raw_output": "{\"vendor\": \"Royaltea\", \"invoice_date\": \"2018-05-09\", \"total\": 10.9}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.316088499999751
+    },
+    {
+      "invoice_text": "PINGHWAI TRADING SDN BHD (1211036-W) NO.2, JALAN METRO PERDANA TIMUR 11, KEPONG ENTERPRENUERS PARK, OFF JALAN KEPONG, 52100 KUALA LUMPUR. TEL : 0122648835 FAX : 603-62592420 GST ID : 001371123712 TAX INVOICE Doc No. : CS00020648 Date: 30/09/2017 Cashier : USER Time: 13:04:00 Salesperson Ref.: (GST) (GST) Item Qty S/Price S/Price Amount Tax 17007 39.00 15.81 15.81 616.59 ZRL UDANG KERING Total Qty: 39.00 616.59 Total Sales (Excluding GST) : 616.59 Discount : 0.00 Total GST : 0.00 Rounding 0.01 Total Sales (Inclusive of GST) : 616.60 {4553 8800 9593 0119} VISA : 616.60 Change : 0.00 GST SUMMARY Tax Code % Amt (RM) Tax (RM) ZRL 0 616.59 0.00 Total : 616.59 0.00 GOODS SOLD ARE NOT RETURNABLE, THANK YOU.",
+      "ground_truth": {
+        "vendor": "PINGHWAI TRADING SDN BHD",
+        "invoice_date": "2017-09-30",
+        "total": 616.6
+      },
+      "prediction": {
+        "vendor": "PINGHWAI TRADING SDN BHD",
+        "invoice_date": "2017-09-30",
+        "total": 616.6
+      },
+      "raw_output": "{\"vendor\": \"PINGHWAI TRADING SDN BHD\", \"invoice_date\": \"2017-09-30\", \"total\": 616.6}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.706798799999888
+    },
+    {
+      "invoice_text": "FARMASI LIGAMAS (001307026-W) NO. 47, JALAN MERANTI 1A, BANDAR BARU UTAMA, 44300 BATANG KALI, SELANGOR. TEL : 03-6057 3391 GST ID : 001805213696 SIMPLIFIED TAX INVOICE CASH Doc No. CS00172418 Date: 20/05/2018 Cashier : USER Time: 12:40:00 Salesperson Ref : Item Qty S/Price Amount Tax 1264 1 25.00 25.00 SR NON WOWEN 3 PLY FACE MASK EAR LOOP 50'S Total Qty: 25.00 Total Sales (Excluding GST) : 23.58 Discount : 0.00 Total GST 1.42 Rounding 0.00 Total Sales (Inclusive of GST) 25.00 CASH : 50.00 Change : 25.00 GST SUMMARY Tax Code % Amt (RM) Tax (RM) SR 6 23.58 1.42 Total : 23.58 1.42 GOODS SOLD ARE NOT RETURNABLE, THANK YOU.",
+      "ground_truth": {
+        "vendor": "FARMASI LIGAMAS",
+        "invoice_date": "2018-05-20",
+        "total": 25.0
+      },
+      "prediction": {
+        "vendor": "LIGAMAS",
+        "invoice_date": "2018-05-20",
+        "total": 25.0
+      },
+      "raw_output": "{\"vendor\": \"LIGAMAS\", \"invoice_date\": \"2018-05-20\", \"total\": 25.0}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.807837800000925
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No.2, Jalan Temenggung 19/9, Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No.: 1199976 Cashier: Nicole Date : 18-06-2018 16:15:47 Description Qty U.price Total TAX ---- Teh (B) 1 × 2.10 2.10 ZRL Cham (B) 1 × 2.10 2.10 ZRL Soya Bean 1 × 1.70 1.70 ZRL Take Away 3 x 0.20 0.60 ZRL Total QTY: 6 Total (Excluding GST): 6.50 Total (Inclusive of GST): 6.50 TOTAL : 6.50 CASH : 6.50 GST Summary Amount (RM) Tax (RM) ZRL (@ 0%) 6.50 0.00",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-06-18",
+        "total": 6.5
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-06-18",
+        "total": 6.5
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-06-18\", \"total\": 6.5}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.614867099999174
+    },
+    {
+      "invoice_text": "3180301 RESTORAN IBRAHIM MAJU SB NO.2, GROUND FLOOR, JALAN REKO SENTRAL 8 TAMAN REKO SENTRAL, 43000 KAJANG SELANGOR DE TEL : 03-87342689 GST ID NO :000696532992 TAX INVOICE INVOICE # : 1-161696 TIME : 19/03/2018 03:43:44 PM CASHIER : JAHABA R ALI SELF SERVICE: 1000 QTY DESCRIPTION PRICE AMOUNT - MAKANAN 2.30 2.30 S MAKANAN 1.40 1.40 S MAKANAN 1.60 1.60 S Sub Total Incl. GST RM 5.30 Round Adjustmt RM 0.00 Total RM 5.30 Payment CASH RM 10.00 Change RM 4.70 GST 6 % Paid RM 0.30 GST ANALYSIS AMT (RM) TAX (RM) S = 6 % 5.00 0.30 Z= 0 % 0.00 0.00 19/03/2018 03:44:03 PM <THANK YOU > <PLEASE COME AGAIN> KP Tegun Jaya San- And, sur - Lau",
+      "ground_truth": {
+        "vendor": "RESTORAN IBRAHIM MAJU SB",
+        "invoice_date": "2018-03-19",
+        "total": 5.3
+      },
+      "prediction": {
+        "vendor": "RESTORAN IBRAHIM MAJU",
+        "invoice_date": "2018-03-20",
+        "total": 5.3
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN IBRAHIM MAJU\", \"invoice_date\": \"2018-03-20\", \"total\": 5.3}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": false,
+        "total": true
+      },
+      "latency_seconds": 6.647921899999346
+    },
+    {
+      "invoice_text": "eCosway.com SON BHD (509213A) 2nd Floor, Wiema Coaway, Jalan Raja Chulan, 50200 Kuala Lumpur, Malaysla. Tel : 603-2030 1000 Fax : 603-2142 5587 Emall: Info@coaway.com.my GST REGISTRATION NO : 000212623360 TAX INVOICE (eCOSWAY) CENTER : G091 USER ID : G091 ID :VPM185710(LEE MEI YEIN) INV NO/DATE: 15403-119386(29/07/2016) MTD RC AT G091 : 230.60 MTD eV AT G091 : 2.10 PRODUCT QTY IOU eV LIPRICE TOTAL (RM) (RM) 8 089884 - 0.70 26.70 26.708R (83F1)PM BATHROOM 80 0888 ER PM BATHROOM CLEANER 8 741698 2 1.40 25.80 51.60BR (A2F1)BG MASK 80 74147 3 0.00 0.00 0.00ER EIG HYDRATING SPA MASK 80 74168 0.00 0.00 0.00BR BG VISIBLY SOFT MILK AMT PAID Incl. GST : RM78.30 Amt Pald excl. GST :RM 73.87 GST AMT : RM4.43 PAID BY : CC'7186:RM78.30 TOTAL QTY : 10 RC EARNED :2 RP USED :0 RC USED :0 Total eV :2.10 Total Qu :0 BjF from Inv No : W 134 6f-3 oog ( 0.00 Member Signature V2.60 29/07/2016 12:13:52 GST Summary AMT(RM) ST. TAX(RM) (excl GST) SR(6%) 73.87 4.4.3 ZR(0%) 0.00 0.00 EX/OS(0%) 0.00 0.00 TOTAL 73.87 4.43 come store within fourteen(14) days from the purchasedi date subject to Company's approval. ICU Items must be redeemed within Three(3) months from the dete of Invoice.(Terms & Conditions applied)",
+      "ground_truth": {
+        "vendor": "eCosway.com SON BHD",
+        "invoice_date": "15403-119386(29/07/2016)",
+        "total": 78.3
+      },
+      "prediction": {
+        "vendor": "SON BHD",
+        "invoice_date": "2016-07-29",
+        "total": 78.3
+      },
+      "raw_output": "{\"vendor\": \"SON BHD\", \"invoice_date\": \"2016-07-29\", \"total\": 78.3}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": false,
+        "total": true
+      },
+      "latency_seconds": 6.140583200000037
+    },
+    {
+      "invoice_text": "Sanjung Realiti Sdn. Bhd. (779763-K) (GST Registration No.: 001751072768) Car Park Office, Basement 1, Lebuhraya SPRINT, PJUGA, 47400 Petaling Jaya, Selangor Tel.: +603 7726 2929 Fax: +603 7726 1326 >>> TAX INVOICE <<< Tax Invoice No.: 0714/0601/00601 27/06/18 10:08 010100 Pay parking ticket 1.50 RM 27/06/18 09:49 - 27/06/18 10:08 Length of stay: 0 Dy. 0 Hr. 19 Min. 02472951053011038178353570?? Total amount 1.50 RM Accepted total 2.00 RM Change 0.50 RM GST 0% 0.00 RM **************************************** ** Thank you ** ****************************************",
+      "ground_truth": {
+        "vendor": "Sanjung Realiti Sdn. Bhd.",
+        "invoice_date": "2018-06-27",
+        "total": 1.5
+      },
+      "prediction": {
+        "vendor": "Sanjung Realiti Sdn. Bhd.",
+        "invoice_date": "2018-06-27",
+        "total": 2.0
+      },
+      "raw_output": "{\"vendor\": \"Sanjung Realiti Sdn. Bhd.\", \"invoice_date\": \"2018-06-27\", \"total\": 2.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": false
+      },
+      "latency_seconds": 6.653419500000382
+    },
+    {
+      "invoice_text": "SAINT HEART PASTRY (001980264-H) 29, JLN SJ 17, TMN SELAYANG JAYA, 68100 BATU CAVES, SELANGOR TEL : 03-61372830 GST ID : 001661329408 SIMPLIFIED TAX INVOICE CASH Receipt #: CS00254837 Table: 45 Staff: AISHAH Date: 25/03/2018 Cashier: AISHAH Time: 10:56:00 Price Amt Description Qty (RM) (RM) Tax JUMBO SAUSAGE CHEESE 3.10 3.10 SR JUMBO SAUSAGE CHEESE 3.10 3.10 SR GARLIC CHEESE 2.00 2.00 SR Total: 3 8.20 Total Sales (Excluding GST) : 7.74 Discount : 0.00 Service Charge : 0.00 Total GST 0.46 Rounding 0.00 Total Sales (Inclusive of GST) 8.20 CASH 8.20 CHANGE 0.00 GST SUMMARY Tax Code % Amt (RM) Tax (RM) SR 7.74 0.46 Total : 7.74 0.46 GOODS SOLD ARE NOT RETURNABLE, THANK YOU. RE-PRINT",
+      "ground_truth": {
+        "vendor": "SAINT HEART PASTRY",
+        "invoice_date": "2018-03-25",
+        "total": 8.2
+      },
+      "prediction": {
+        "vendor": "SAINT HEART PASTRY",
+        "invoice_date": "2018-03-25",
+        "total": 8.2
+      },
+      "raw_output": "{\"vendor\": \"SAINT HEART PASTRY\", \"invoice_date\": \"2018-03-25\", \"total\": 8.2}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.752969200000734
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No. 2, Jalan Temenggung 19/9, Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No. : 1134279 Cashier: Thandar Date : 10-05-2018 16:01:18 Description Qty U. price Total TAX Teh (B) 2 x 2. 20 4.40 SR Cham (B) 1 × 2.20 2. 20 SR Take Away 3 × 0.20 0.60 SR Total QTY: 6 Total (Excluding GST) : 6.81 GST payable (6%) : 0.39 Total (Inclusive of GST) : 7.20 TOTAL : 7. 20 CASH 7. 20 GST Summary Amount (RM) Tax (RM) SR (@ 6%) 6.81 0.39",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-10",
+        "total": 7.2
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-10",
+        "total": 7.2
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-05-10\", \"total\": 7.2}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.6979831000007835
+    },
+    {
+      "invoice_text": "A06028 UNIHAKKA INTERNATIONAL SDN BHD 11 Jun 2018 18:32 (867388-U) 12, Jalan Tampoi 7/4,Kawasan Perindustrian Tampoi, 81200 Johor Bahru, Johor TAX INVOICE Invoice # : OR18061102170340 Item Qty Total SR 100100000015- Vegetable RM1.03 RM4.12 SR 100100000056-Fried Noodle (S) RM1.88 1 RM1.88 Total Amount: RM6.00 GST @0%: RM0.00 Nett Total: RM6.00 Payment Mode Amount CASH RM6.00 Change RM0.00 GST Summary Amount(RM) Tax(RM) SR = GST @0% 6.00 0.00 GST REG #000656195584 BAR WANG RICE@PERMAS JAYA Thank You & Come Again! Like and Follow Us on Facebook! Facebook.com/BarWangRice",
+      "ground_truth": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-06-11",
+        "total": 6.0
+      },
+      "prediction": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-06-11",
+        "total": 6.0
+      },
+      "raw_output": "{\"vendor\": \"UNIHAKKA INTERNATIONAL SDN BHD\", \"invoice_date\": \"2018-06-11\", \"total\": 6.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.252248299999337
+    },
+    {
+      "invoice_text": "A0 3030 UNIHAKKA INTERNATIONAL SDN BHD 10 Mar 2018 18:24 (867388-U) 12, Jalan Tampoi 7/4,Kawasan Perindustrian Tampoi,81200 Johor Bahru, Johor TAX INVOICE Invoice # : OR18031002160274 Item Qty Total SR 100100000035- 1 Meat + 3 Vege $7.10 1 $7.10 SR 100100000015- Vegetable $1.10 $1.10 Total Amount: $8.20 GST @6%: $0.46 Nett Total: $8.20 Payment Mode Amount CASH $8,20 Change $0.00 GST Summary Amount($) Tax[$) SR = QST @:0% 7 74 0.48 GST REG #000656195584 BAR WANG RICE@PERMAS JAYA (Price Inclusive Of GST) Thank You & Come Again! Like and Follow Us on Facebook! Facebook.com/BarWangRice",
+      "ground_truth": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-03-10",
+        "total": null
+      },
+      "prediction": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-03-10",
+        "total": 8.2
+      },
+      "raw_output": "{\"vendor\": \"UNIHAKKA INTERNATIONAL SDN BHD\", \"invoice_date\": \"2018-03-10\", \"total\": 8.2}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": false
+      },
+      "latency_seconds": 6.37017239999841
+    },
+    {
+      "invoice_text": "Gerbang Alaf Restaurants Sdn Bhd (65351-M) Licensee of McDonald's Level 6, Bangunan TH, Damansara Uptown3 No.3, Jalan SS21/39,47400 Petaling Jaya Selangor (GST ID No: 000504664064) McDonald's Rawang DT(#188) Tel No. 03-6092-1968 TAX INVOICE MFY Side 1 INV# 001881904580783 ORD #70 -REG #19- 18/03/2018 23:02:16 QTY ITEM TOTAL 1 L McChicken 11.10 1 L Coke 1 L Fries 2 Small Cone 2.00 TakeOut Total (incl GST) 13.10 Total Rounded 13.10 Cash Tendered 20.00 Change 6.90 TOTAL INCLUDES 6% GST 0.74 ink You and Please Come Again. Guest Relations Center : 1300-13-1300",
+      "ground_truth": {
+        "vendor": "Gerbang Alaf Restaurants Sdn Bhd",
+        "invoice_date": "2018-03-18",
+        "total": 13.1
+      },
+      "prediction": {
+        "vendor": "Gerbang Alaf Restaurants Sdn Bhd",
+        "invoice_date": "2018-03-18",
+        "total": 13.1
+      },
+      "raw_output": "{\"vendor\": \"Gerbang Alaf Restaurants Sdn Bhd\", \"invoice_date\": \"2018-03-18\", \"total\": 13.1}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.032873999998628
+    },
+    {
+      "invoice_text": "31803033 MR. D.I.Y. (KUCHAI) SON BHD (CO Reg : 750441-W) LOT 1851-A & 1851-B, JALAN KPB 6, KAWASAN PERINDUSTRIAN BALAKONG, 43300 SERI KEMBANGAN, SELANGOR (GST ID No :000473792512) (STRAND MALL KOTA DAMANSARA) - TAX INVOICE - PYEDRAIN CLOG FREE CLDR02 - 1000ML *S WA05 - 12 9556268000210 3 × 15.00 45.00 Item(s) : 1 Qty(s) : 3 TOTAL INCL. GST@6% RM 45.00 CARD RM 45.00 GST Summary Amt (RM) Tax (RM) GST S@6% 42.45 2.55 *-- * 12-03-18 14:37 SH02 8011 T1 R000183898 OPERATOR STMT - AZMIZAN EXCHANGE ARE ALLOWED WITHIN 7 DAYS WITH RECEIPT. STRICTLY NO CASH REFUND.",
+      "ground_truth": {
+        "vendor": "MR. D.I.Y. (KUCHAI) SON BHD",
+        "invoice_date": "2018-03-12",
+        "total": 45.0
+      },
+      "prediction": {
+        "vendor": "MR. D.I.Y. (KUCHAI) SON BHD",
+        "invoice_date": "2018-12-03",
+        "total": 45.0
+      },
+      "raw_output": "{\"vendor\": \"MR. D.I.Y. (KUCHAI) SON BHD\", \"invoice_date\": \"2018-12-03\", \"total\": 45.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": false,
+        "total": true
+      },
+      "latency_seconds": 7.238189300000158
+    },
+    {
+      "invoice_text": "A04/20 PASARAYA JALAL SDN BHD 396125-H 10-18,JLN KEBUDAYAAN 16,TMN U 81300 JOHOR BAHRU. Tel:07-5208680 Fax:07-5208680 Email: sales@smart-acc.com GST ID No: 000902660096 TAX INVOICE Invoice No 01-428985 Date 20/04/2018 9:01:22 PM Cashier : PJSTAFF5 Sales Persor : NOT APPLICABLE Description Qty____Price Amount 02353830 2 3.20 6.40 SR* Water/Oil Tumbler or Jug Bottle 5L Qty: 2 Discount: 0.00 Total Inclusive GST: 6.40 Round Amt: 0.00 TOTAL: 6.40 Cash Received : 100.00 Change : 93.60 GST_Summary Amount(RM) Tax(RM) SR=6.00% 6.04 0.36 Goods Sold Are Not Returnable & Refundable **** Thank You. Please Come Again. ****",
+      "ground_truth": {
+        "vendor": "PASARAYA JALAL SDN BHD",
+        "invoice_date": "2018-04-20",
+        "total": 6.4
+      },
+      "prediction": {
+        "vendor": "PASARAYA JALAL SDN BHD",
+        "invoice_date": "2018-04-20",
+        "total": 6.4
+      },
+      "raw_output": "{\"vendor\": \"PASARAYA JALAL SDN BHD\", \"invoice_date\": \"2018-04-20\", \"total\": 6.4}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.092818499999339
+    },
+    {
+      "invoice_text": "GREEN LANE PHARMACY SDN BHD 33 JLN BANGAU 1,KEPONG BARU, 52100 KEPONG,KL TEL : 62760693 FAX : 62760693 BRN : 631002-U GST No : 001888309248 == TAX INVOICE Inv No : 16-073042 DATE : 12/13/2016 9:52:15 AM 1)9557892102639 IBUPROFEN 400MG 10 3.00 × 3.00 9.00 z 2)0253K AMOXICAP 500MG CAPSU 2.00 × 6.00 12.00 z 3)9557892201011 NOFLUX TAB 90MG 10 5.00 × 4.00 19.98 * 4)9556492002837K FEBRICOL -RX 10 2.00 × 2.70 5.40 z 5)9316254866387 VITAMORE EPO 1000MG 2.00 × 68.00 DISC -28.00 108.00 * 6)9555197602366 NOVA ROSELLE &F VIT 1.00 × 28.60 DISC -2.90 25.70 * Rounding : 0.02 TOTAL 180.10 ( GST : 8.70 ) ************************************** PAYMENT .: TOTAL PAYMENT : 180.10 CHANGE 0.00 > VISA 180.10 ************ *************** Rate % TOTAL GST * : 6% 144.98 8.70 Z : 0% 26.40 0.00 LEE MEI YEIN Prev Balance : 2651 Points Earn : 171 (Complete) FARMASI ALPHA.COM GOODS SOLD ARE NOT RETURNABLE * Total Sales Inclusive GST @ 6% *",
+      "ground_truth": {
+        "vendor": "GREEN LANE PHARMACY SDN BHD",
+        "invoice_date": "2016-12-13",
+        "total": 180.1
+      },
+      "prediction": {
+        "vendor": "GREEN LANE PHARMACY SDN BHD",
+        "invoice_date": "2016-07-30",
+        "total": 180.1
+      },
+      "raw_output": "{\"vendor\": \"GREEN LANE PHARMACY SDN BHD\", \"invoice_date\": \"2016-07-30\", \"total\": 180.1}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": false,
+        "total": true
+      },
+      "latency_seconds": 7.247260700001789
+    },
+    {
+      "invoice_text": "MUN HENG ELECTRICAL & HARDWARE SUPPLY (ROC: 001960460-U) GSTID No: 000372871168 No.52, Jalan Bulan US/BT, Bandar Pinggiran Subang, Sungal Buloh, 40150 Shah Alam, Sel. Tel:013-2238377/016-3602080 Fax:03-78455334 Tax Invoice No. : CS-51762 Date : 01/02/2018 Qty RM Tax 2# WHITE SPRAY 1.00 7.00 SR @ 7.00 Total Amt Indl. GST @ 6% : 7.00 Rounding Adjustment : 0.01 Total Arnt Payable : 7.00 X Paid Amount : 7.00 Change : 0.00 Total Qty Tender : Goods sold are not return (bie. IGST Summary Amount Tax - (RM) (RM) PER A 6.60 i Total 5.60 0.40 = THANK YOU For any enquiry, please e-mail us: 01/02/2018 16:22:05",
+      "ground_truth": {
+        "vendor": "MUN HENG ELECTRICAL & HARDWARE SUPPLY",
+        "invoice_date": "2018-02-01",
+        "total": 7.0
+      },
+      "prediction": {
+        "vendor": "MUN HENG ELECTRICAL & HARDWARE SUPPLY",
+        "invoice_date": "2018-02-01",
+        "total": 7.0
+      },
+      "raw_output": "{\"vendor\": \"MUN HENG ELECTRICAL & HARDWARE SUPPLY\", \"invoice_date\": \"2018-02-01\", \"total\": 7.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.84440480000012
+    },
+    {
+      "invoice_text": "PASARAYA BORONG PINTAR SDN BHD BR No.: (124525-H) NO 19-G&19-1& 19-2 JALAN TASIK UTAMA 4, MEDAN NIAGA TASIK DAMAI 016-5498845, GST No. : 14/02/2018 5:37:44PM TAX INVOICE TRN: CR0005140 COUNTER 4 CASHIER: 2 QTY UOM UNIT Amt Exc. Amt Inc. GST Price Tax Tax Code 100PLUS LIME 325ML 1 WALK 1.45 1.45 1.45 ZRL *Total Qty: 1.00 1.45 Total Includes GST 0% 1.45 Customer's Payment Cash 10.00 Change 8.55 GST Summary Amount (RM) Tax (RM) ZRL = 0 % 1.45 0.00 *Goods sold are not returnable Thank you for shopping at PASARAYA BORONG PINTAR SDN BHD",
+      "ground_truth": {
+        "vendor": "PASARAYA BORONG PINTAR SDN BHD",
+        "invoice_date": "2018-02-14",
+        "total": 1.45
+      },
+      "prediction": {
+        "vendor": "PASARAYA BORONG PINTAR SDN BHD",
+        "invoice_date": "2018-05-01",
+        "total": 1.45
+      },
+      "raw_output": "{\"vendor\": \"PASARAYA BORONG PINTAR SDN BHD\", \"invoice_date\": \"2018-05-01\", \"total\": 1.45}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": false,
+        "total": true
+      },
+      "latency_seconds": 7.706799300000057
+    },
+    {
+      "invoice_text": "TAX INVOICE KHIAM AIK CHAN SDN BHD (88842-H) No. 76, Jelan S515/4B, 47500 Subang Jaya, Selangor D.E. GST Reg.: 000555819008 Cash Sales No. : C5-19204 Date : 25/09/2017 01:48:57 PM 1. Max 10-1M staples 2 × 14.20 28.40 Total Sales Inclusive GST @6% 28.40 CASH 50.0€ CHANGE 21.60 GST Summary Amount(RM) Tax(RM) SR @ 6% 26.79 1.61 Gaads sold are not retumable. Thank you! Please come again!_",
+      "ground_truth": {
+        "vendor": "KHIAM AIK CHAN SDN BHD",
+        "invoice_date": "2017-09-25",
+        "total": 28.4
+      },
+      "prediction": {
+        "vendor": "KHIAM AIK CHAN SDN BHD",
+        "invoice_date": "2017-09-25",
+        "total": 28.4
+      },
+      "raw_output": "{\"vendor\": \"KHIAM AIK CHAN SDN BHD\", \"invoice_date\": \"2017-09-25\", \"total\": 28.4}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.366265799999383
+    },
+    {
+      "invoice_text": "GARDENIA BAKERIES (KL) SDN BHD (139386 X) Lot 3, Jalan Pelabur 23/1, 40300 Shah Alam, Selangor. Tel: 03- 55423228 Fax:03- 55423213 GST ID: 000381399040 TAX INVOICE / ADJUSTMENT NOTE Cash Inv No.: 7029F711 VI Date: 29/10/2017 MAKASSAR FRESH MARKET SDN BHD GROUND FLOOR, NO. 4 & 6, JALAN SS 15/4B, 47500 SUBANG JAYA, SELANGOR VE05: Ridzuan (11900) DD: 29/10/2017 11:39 Description U.P Iss Exc D Sale Amt(RM) O.C. WHITE 2.13 9 0 19.17 WHOLEMEAL 2.78 8 GNO 6 16.68 O. C JUMBO 2.97 3 3 8.91 Total 0% supplies: 44.76 TWIG-CHOC 1.33 10 0 0 10 13.30 Total 6% supplies (excl. GST): 13.30 GST: 0.80 Total 6% supplies (Inc. GST): 14.10 Total 0% supplies: 44.76 Total Payable: 58.86 E. Received above goods in good order condition. The recipient of Gardenia's products is required to make necessary adjustments to its input tax claims, on the basic of the adjustments shown in this Tax Invoice / Adjustment Note CUSTOMER'S COPY",
+      "ground_truth": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-10-29",
+        "total": 58.86
+      },
+      "prediction": {
+        "vendor": "GARDENIA BAKERIES (KL) SDN BHD",
+        "invoice_date": "2017-10-29",
+        "total": 58.86
+      },
+      "raw_output": "{\"vendor\": \"GARDENIA BAKERIES (KL) SDN BHD\", \"invoice_date\": \"2017-10-29\", \"total\": 58.86}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.298232999999527
+    },
+    {
+      "invoice_text": "Work Catering FIVE STAR CASH & CARRY (1365663-P) G.23 & G.22, Plaza Seri Setia, No.1 Jalan SS 9/1, 47300 PJ, Selangor. Tel/Fax : 603-7877 9712 (POS 3) (GST No.: 000610435072) TAX INVOICE RECEIPT NO. [00522899] 19/01/17 10:48 15755 × 19.80 S [MAP]KISMIS 500GM @ 9.90 19,80 Quantity Out : 2 NET TOTAL 19.80 Raisin CASH : 50.00 CHANGE : 30.20 GST Summary Amount (RM) Tax (RM) S = 6% 18.68 1.12 V Z = 0% 0.00 0.00 THANK YOU AND DO VISIT US AGAIN. Cashier [P. NISANTHI] Machine [003] (01/17] [10:49]",
+      "ground_truth": {
+        "vendor": "FIVE STAR CASH & CARRY",
+        "invoice_date": "2017-01-19",
+        "total": 19.8
+      },
+      "prediction": {
+        "vendor": "WORK CATERING",
+        "invoice_date": "2017-01-19",
+        "total": 19.8
+      },
+      "raw_output": "{\"vendor\": \"WORK CATERING\", \"invoice_date\": \"2017-01-19\", \"total\": 19.8}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.961837900000319
+    },
+    {
+      "invoice_text": "MR. D.I.Y. (KUCHAI) SDN BHD LOT 1851-A & 1851-B, JALAN KPB 6, KAWASAN PERINDUSTRIAN BALAKONG, 43300 SERI KEMBANGAN, SELANGOR (GST ID No :000473792512) (SG WANG) - SPONGE DISHES 6103# *S UH14-21-32 - 12/120 9068739 1 × 3.30 3.30 Item(s) : 1 Qty(s) : 1 Total Incl. GST@6% RM 3.30 CASH RM 3.30 GST @6% included in total RM 0.19 17-04-16 14:02 SH01 B019 T3 R000034325 OPERATOR CHC - JIVAN EXCHANGE ARE ALLOWED WITHIN 3 DAY WITH RECEIPT. STRICTLY NO CASH REFUND.",
+      "ground_truth": {
+        "vendor": "MR. D.I.Y. (KUCHAI) SDN BHD",
+        "invoice_date": "2016-04-17",
+        "total": 3.3
+      },
+      "prediction": {
+        "vendor": "MR. D.I.Y. (KUCHAI) SDN BHD",
+        "invoice_date": "2016-04-17",
+        "total": 3.3
+      },
+      "raw_output": "{\"vendor\": \"MR. D.I.Y. (KUCHAI) SDN BHD\", \"invoice_date\": \"2016-04-17\", \"total\": 3.3}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.940201299999899
+    },
+    {
+      "invoice_text": "1403/3 4 UNIHAKKA INTERNATIONAL SDN BHD 29 Mar 2018 18:19 (867388-U) 12, Jalan Tampoi 7/4,Kawasan Perindustrian Tampof, 81200 Johor Bahru, Johor TAX INVOICE Invoice # : OR18032902170347 item Qty Total SR 100100000035- 1 Meat + 3 Vege $7.10 1 $7.1 Total Amount: $7.10 GST @6%: $0.40 Nett Total: $7.10 Payment Mode Amount CASH $7.10 Change $0.00 GST Summary Amount($) Tax(S) SA = QST @:55 6.70 0,40 GST REG #000656195584 BAR WANG RICE@PERMAS JAYA (Price Inclusive Of GST) Thank You & Come Again! Like and Follow Us on Facebook! Facebook.com/BarWangRice",
+      "ground_truth": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-03-29",
+        "total": 7.1
+      },
+      "prediction": {
+        "vendor": "UNIHAKKA INTERNATIONAL SDN BHD",
+        "invoice_date": "2018-03-29",
+        "total": 7.1
+      },
+      "raw_output": "{\"vendor\": \"UNIHAKKA INTERNATIONAL SDN BHD\", \"invoice_date\": \"2018-03-29\", \"total\": 7.1}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.2620360999990226
+    },
+    {
+      "invoice_text": "SUPER SEVEN CASH & CARRY SON 3HD (590150-A) FASARAYA BORONG SUPER SEVEN NO. 1 Jalan Euro 1 Off Jalan Batu Tiga Sungai Buloh Seksyen U3 Shah Alam, 40150 http://www.super7.com.my TEL : 03-78590861 FAX : 03-78590864 GST ID : 000639090688 TAX INVOICE Customer : [77853745] Mrs. ONG GUAT CHYE TAX INVOICE NO : 192636 COUNTER :002 OPERATOR : [SYED AHMAD FALLAH BI-CUSTOMER SERVICE CLERK ] 01-02-2018 09:52:50 AM (RM) ======== LADY CHOICE 3L TARTAR SAUC @35.50 9556024001383 *1 35.50 SR SAYUR RM1.00 @1.00 FM420000000 *2 2.00 ZR SAYUR. RM1.00 @1.00 FM420000000 *3 3.00 ZR KOBIS MERAH @1.60 42129 *1 1.60 ZR QUANTITY : 7 Units Total Sales (Incl. GST @6%) RM42.10 Rounding Adjustment RM0.00 Net Total RM42.10 Payment Method 42 -10 VISA CARD GST Summary Sales Amt Tax Amt (RM) ( RM ) SR (6%) 33.49 2.01 ZR (0%) 6.60 0.00 PLEASE VERIFY YOUR RECEIPT BEFORE LEAVING THE COUNTER. GOODS SOLD ARE NOT RETURNABLE. THANK YOU",
+      "ground_truth": {
+        "vendor": "SUPER SEVEN CASH & CARRY SON 3HD",
+        "invoice_date": "2018-02-01",
+        "total": 42.1
+      },
+      "prediction": {
+        "vendor": "SUPER SEVEN CASH & CARRY SON",
+        "invoice_date": "2018-02-01",
+        "total": 42.1
+      },
+      "raw_output": "{\"vendor\": \"SUPER SEVEN CASH & CARRY SON\", \"invoice_date\": \"2018-02-01\", \"total\": 42.1}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 7.0026803000000655
+    },
+    {
+      "invoice_text": "TEO HENG STATIONERY & BOOKS (001451637-M) NO. 53, JALAN BESAR, 45600 BATANG BERJUNTAI SELANGOR DARUL EHSAN TEL : 03-3271 9872 FAX : 03-3271 9481 GST No. : 000689913856 SIMPLIFIED TAX INVOICE CASH Receipt No. : CS1801/26821 Date : 17/01/2018 ITEM QTY UP DISCO AMOUNT (RM) 9555017370017 1 28.00 7.14 26.00 * - LION FILE 220*307 LAMINATING FILM Total Qty. : 26.00 SUB-TOTAL (EX) 26.00 TOTAL TAX 1.56 ROUNDING -0.01 TOTAL 27.55 CASH CHANGE 17 JAN 2018 0.00 GST SUMMARY TAX CODE % AMOUNT TAX (RM) (RM, SR 6.00 26.00 1.56 TOTAL : 26.00 1.56 Note: (*) Indicated The Item Sold Has Been Related To GST (Goods & Services Tax). GOODS SOLD ARE NOT RETURNABLE, THANK YOU.",
+      "ground_truth": {
+        "vendor": "TEO HENG STATIONERY & BOOKS",
+        "invoice_date": "2018-01-17",
+        "total": 27.55
+      },
+      "prediction": {
+        "vendor": "TEO HENG STATIONERY & BOOKS",
+        "invoice_date": "2018-01-17",
+        "total": 27.55
+      },
+      "raw_output": "{\"vendor\": \"TEO HENG STATIONERY & BOOKS\", \"invoice_date\": \"2018-01-17\", \"total\": 27.55}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.662303299999621
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No.2, Jalan Temenggung 19/9, Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No.: 1030720 Cashier: Nicole Date : 05-03-2018 19:02:50 Description Qty U.price Total TAX Milo (B) 2 × 2.80 5.60 SR Take Away 2 × 0.20 0.40 SR Total QTY: 4 Total (Excluding GST) : 5.66 GST payable (6%): 0.34 Total (Inclusive of GST): 6.00 TOTAL: 6.00 -- CASH : 6.00 GST Summary Amount (RM) Tax (RM) SR (@ 6%) 5.66 0.34",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-03-05",
+        "total": 6.0
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-03-05",
+        "total": 6.0
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-03-05\", \"total\": 6.0}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.894622899999376
+    },
+    {
+      "invoice_text": "CELE -DOwas Thank you 31804 065 YWAY VELOCITY 8-29C & 290, Lingkaran SV, Sunw 55100 Kuala Lumpur. Tpl MR. D.I.Y. (M) SON BHD (CO.REG : 860671-D) LOT 1851-A & 1851-B, JALAN KPB 6, KAWASAN PERINDUSTRIAN BALAKONG, 43300 SERI KEMBANGAN, SELANGOR (GST ID No :000306020352) ( IOI PUCHONG) -TAX INVOICE- LAVA FOOD CONTAINER FC202 500ml *S WA26 - 12/144 9555047302026 1 × 1.80 1.80 LAVA CANISTER CST7700 530ml *S WA33 - 12/144 9555047301890 2 × 1.60 3.20 Item(s) : 2 Qty (s) : 3 Total Incl. GST@6% RM 5.00 CASH RM 50.00 CHANGE RM 45.00 GST @6% included in total RM 0.28 *---. ---* 30-04-18 18:17 SH01 ZJ86 T2 R000121653 OPERATOR TRAINEE CASHIER EXCHANGE ARE ALLOWED WITHIN 7 DAY WITH RECEIPT. STRICTLY NO CASH REFUND.",
+      "ground_truth": {
+        "vendor": "MR. D.I.Y. (M) SON BHD",
+        "invoice_date": "2018-04-30",
+        "total": 5.0
+      },
+      "prediction": {
+        "vendor": "SON BHD",
+        "invoice_date": "2018-04-30",
+        "total": 5.0
+      },
+      "raw_output": "{\"vendor\": \"SON BHD\", \"invoice_date\": \"2018-04-30\", \"total\": 5.0}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.6769662000006065
+    },
+    {
+      "invoice_text": "31803040 MR. D.I.Y. (M) SON BHD (CO.REG : 860671-D) LOT 1851-A & 1851-B, JALAN KPB 6, KAWASAN PERINDUSTRIAN BALAKONG, 43300 SERI KEMBANGAN, SELANGOR (GST ID No :000306020352) (IOI PUCHONG) -TAX INVOICE- STUDENT SOCKS 3PCS BK *S JH61 - 4/200 9034915 1 × 9.50 9.50 BELT 5202-3#*VS *S QI31 - 12/480 9034870 1 × 22.90 22.90 PVC MAN PPER 969 (BK ) *S WA36 - 9555590500184 1 × 10.50 10.50 Item(s) : 3 Qty(s) : 3 Total Incl. GST@6% RM 42.90 CASH RM 50.00 CHANGE RM 7.10 GST @6% included in total RM 2.43 *-- ·* 17-03-18 14:49 SH01 ZJ86 T1 R000110133 OPERATOR TRAINEE CASHIER EXCHANGE ARE ALLOWED WITHIN 7 DAY WITH RECEIPT. STRICTLY NO CASH REFUND.",
+      "ground_truth": {
+        "vendor": "MR. D.I.Y. (M) SON BHD",
+        "invoice_date": "2018-03-17",
+        "total": 42.9
+      },
+      "prediction": {
+        "vendor": "MR. D.I.Y. (M) SON BHD",
+        "invoice_date": "2018-03-17",
+        "total": 42.9
+      },
+      "raw_output": "{\"vendor\": \"MR. D.I.Y. (M) SON BHD\", \"invoice_date\": \"2018-03-17\", \"total\": 42.9}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.732538199999908
+    },
+    {
+      "invoice_text": "RESTORAN WAN SHENG 002043319-W No.2, Jalan Temenggung 19/9, Seksyen 9, Bandar Mahkota Cheras, 43200 Cheras, Selangor GST REG NO: 001335787520 Tax Invoice INV No.: 1159923 Cashier: Thandar Date : 26-05-2018 15:16:13 Description Qty U.price Total TAX Teh (B) 2 × 2.20 4.40 SR Take Away 2 × 0.20 0.40 SR Total QTY: 4 Total (Excluding GST): 4.54 GST payable (6%): 0.26 Total (Inclusive of GST): 4.80 TOTAL: 4.80 CASH : 4.80 GST Summary Amount (RM) Tax(RM) SR (@ 6%) 4.54 0.26",
+      "ground_truth": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-26",
+        "total": 4.8
+      },
+      "prediction": {
+        "vendor": "RESTORAN WAN SHENG",
+        "invoice_date": "2018-05-26",
+        "total": 4.8
+      },
+      "raw_output": "{\"vendor\": \"RESTORAN WAN SHENG\", \"invoice_date\": \"2018-05-26\", \"total\": 4.8}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 5.753992399999333
+    },
+    {
+      "invoice_text": "Hobos 3. THE TOAST F&B SDN BHD (965752-1) LOT 211082111 JALAN PERMAS UTARA BANDAR BARU PERMAS 81750,JOHOR BAHRU JOHOR Tel: 07-3886880 GST ID No. 002069884928 TAX INVOICE PS8418065765 16/06/2018 S/P: POS1 Loc: PMS Walk In Table: 24 Item Qty U.Price Disc Amount RM 230 MONGOLIA CHICKEN 1 9.40 0.00 9.40 S 101 BUTTER KAYA 1 2.35 0.00 2.35 S 205 MEE HUN KUEY 1 8.00 0.00 8.00 S 412 NESLO (ICE) 1 4.25 0.00 4.25 S 432 HONEY RED TEA (ICE) 1 4.15 0.00 4.15 S Total Items: 5 Sub Total RM 28.15 Less Discount: 0.00 Round: 0.00 Total Due (GST Inc): 28.15 Paid: Cash 50.00 Change: 21.85 S:GST(0%): 28.15 0.00 Please Come Again! 16/06/2018 06:18:40 pm",
+      "ground_truth": {
+        "vendor": "THE TOAST F&B SDN BHD",
+        "invoice_date": "2018-06-16",
+        "total": 28.15
+      },
+      "prediction": {
+        "vendor": "THE TOAST F&B SDN BHD",
+        "invoice_date": "2018-06-16",
+        "total": 28.15
+      },
+      "raw_output": "{\"vendor\": \"THE TOAST F&B SDN BHD\", \"invoice_date\": \"2018-06-16\", \"total\": 28.15}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.614533899999515
+    },
+    {
+      "invoice_text": "HOME MASTER HARDWARE & ELECTRICAL NO.113G & 115G, JALAN SETIA GEMBILANG U13/EG BANDAR SETIA ALAM, 40170 BANDAR SETIA ALAM, SELANGOR. Company Reg No. :SA03711551-P GST Reg No. :001637511168 TAX INVOICE Involce No.: CS 67832 Date : 22/12/2017 14:03 Cashler #: CASHIER RM Code 24MMx7Y M.ONE TAPE 1.00 15.90 15.90 SR Subtotal : 15.90 Total Excl. of GST 15.00 Total Incl. of GST 15.90 - - Total Amt Rounded 15.90 Payment : 50.00 Change Due : 34.10 Total Item(6) : 1 G Summary Amount (RM) Tax (RM) SR 15.00 0.90 ........ THANK YOU . ANY GOODS RETURN PLEASE DO WITHIN 7 DAYS WITH ORIGINAL RECEIPT TQM",
+      "ground_truth": {
+        "vendor": "HOME MASTER HARDWARE & ELECTRICAL",
+        "invoice_date": "2017-12-22",
+        "total": 15.9
+      },
+      "prediction": {
+        "vendor": "HOME MASTER HARDWARE & ELECTRICAL",
+        "invoice_date": "2017-12-22",
+        "total": 15.9
+      },
+      "raw_output": "{\"vendor\": \"HOME MASTER HARDWARE & ELECTRICAL\", \"invoice_date\": \"2017-12-22\", \"total\": 15.9}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.0924565000004804
+    },
+    {
+      "invoice_text": "99 SPEED MART S/B (519537-X) LOT P.T. 2811, JALAN ANGSA, TAMAN BERKELEY 41150 KLANG, SELANGOR 1249-TMN PANDAN CAHAYA GST ID. NO : 000181747712 INVOICE NO : 18386/103/T0314 09:41PM 568008 03-05-18 2249 CARLSBERG SMOOTH DRAUG RM14.30 s 483 CARLSBERG CAN 320ML (IC RM5.60 $ Total Sales (Inclusive GST) RM 19.90 CASH RM 19.90 CHANGE RM .00 GST Summary Amount (RM) Tax (RM) $ = 6% 18.77 1.13 Thank You. Please come again Keep the invoice for applicable returns",
+      "ground_truth": {
+        "vendor": "99 SPEED MART S/B",
+        "invoice_date": "2018-05-03",
+        "total": 19.9
+      },
+      "prediction": {
+        "vendor": "SPEED MART S/B",
+        "invoice_date": "2018-05-03",
+        "total": 19.9
+      },
+      "raw_output": "{\"vendor\": \"SPEED MART S/B\", \"invoice_date\": \"2018-05-03\", \"total\": 19.9}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.10035919999973
+    },
+    {
+      "invoice_text": "BEMED (SP) SDN. BHD. No.49, Jala: DharG U3.G. Sibang Perdala, 40150 Sia Am, 9atgor D.E. 03-7845 8155 GST Reg : 001734164480 CASH RECEIPT CB# : 236100411023 27/11/2018 06 :27:41 Cashier : mimie 0 Qy Code&Desc Price Total PRISTIN MOPL FISH OIL 1 465920 143.70 143.70 ALPHA LIPID LIFE LINE 1 184810 165.00 165.00 2 Type: 2 Sub Total: 308.70 Rounding Adj : 0.00 Total Inclusive GST: 308.70 < MASTER 308.70 G ST Summary: Amount Tax (MYR) (MY R) ISR 291.23 17.47 ONG GUAT CHYE Points : 1,546 30 8- 72 Thank you. Please come again.",
+      "ground_truth": {
+        "vendor": "BEMED (SP)",
+        "invoice_date": "236100411023 27/11/2018",
+        "total": 308.7
+      },
+      "prediction": {
+        "vendor": "BEMED (SP) SDN. BHD.",
+        "invoice_date": "2018-11-27",
+        "total": 308.7
+      },
+      "raw_output": "{\"vendor\": \"BEMED (SP) SDN. BHD.\", \"invoice_date\": \"2018-11-27\", \"total\": 308.7}",
+      "scores": {
+        "vendor": false,
+        "invoice_date": false,
+        "total": true
+      },
+      "latency_seconds": 6.871414499999446
+    },
+    {
+      "invoice_text": "SANYU STATIONERY SHOP NO. 31G&33G, JALAN SETIA INDAH X ,U13/X 40170 SETIA ALAM Mobile /Whatsapps : +6012-918 7937 Tel: +603-3362 4137 GST ID No: 001531760640 TAX INVOICE Owned By : SANYU SUPPLY SDN BHD (1135772-K) CASH SALES COUNTER 1. 2008-0040 PRO ADHESIVE LABEL (WHITE) 2585 1 × 2.2000 2.20 SR 2. 2012-0029 RESTAURANT ORDER CHIT NCR 3.5\"x6\" 3 × 2.9000 8.70 SR 3. 7002-0014 SONOFAX - EC THERMAL ROLL (BLUE) - (57MMx60MM×12MM) (10ROLL/PKT) 1 × 36.0000 36.00 SR Total Sales Inclusive GST @6% 46.90 Discount 0.00 Total 46.90 Round Adj 0.00 Final Total 46.90 CASH 100.00 CHANGE 53.10 GST Summary Amount(RM) Tax(RM) SR @ 6% 44.25 2.65 INV NO: CS-SA-0133215 Date : 28/12/2017 Total Qty: 5 Print Time : Thursday, 28 December, 2017 5:26:39 PM Goods sold are not Returnable & Refundable THANK YOU FOR YOUR PATRONAGE PLEASE COME AGAIN. TERIMA KASIH SILA DATANG LAGI ** PLEASE KEEP THIS RECEIPT FOR PROVE OF PURCHASE DATE FOR I.T PRODUCT WARRANTY PURPOSE ** Follow us in Facebook : Sanyu.Stationery",
+      "ground_truth": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-12-28",
+        "total": 46.9
+      },
+      "prediction": {
+        "vendor": "SANYU STATIONERY SHOP",
+        "invoice_date": "2017-12-28",
+        "total": 46.9
+      },
+      "raw_output": "{\"vendor\": \"SANYU STATIONERY SHOP\", \"invoice_date\": \"2017-12-28\", \"total\": 46.9}",
+      "scores": {
+        "vendor": true,
+        "invoice_date": true,
+        "total": true
+      },
+      "latency_seconds": 6.4187404999993305
+    }
+  ]
+}

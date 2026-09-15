@@ -1,0 +1,11 @@
+Northwind Logistics
+Invoice #: INV-778812
+Date: 2025-06-14
+
+Description                  Qty   Unit Price   Line Total
+Freight and handling          3      $145.00       $435.00
+Consulting services (hourly)  6      $210.50      $1263.00
+
+Subtotal: $1698.00
+Tax: $135.84
+Total: $1833.84

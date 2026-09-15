@@ -116,6 +116,14 @@ dir on this machine; not needed on other platforms.)
 
 ## Results
 
-See [`results/EVAL_REPORT.md`](results/EVAL_REPORT.md) — filled in after the real
-baseline and fine-tuned evaluation runs (never before; see PRD critical rule against
-fabricated numbers).
+Full writeup, per-field breakdown, improved/failure examples, and latency numbers in
+[`results/EVAL_REPORT.md`](results/EVAL_REPORT.md). Headline overall-F1 numbers (n=21
+synthetic / n=100 SROIE test examples):
+
+| | baseline (zero-shot) | fine-tuned (LoRA) |
+|---|---|---|
+| Synthetic test set | 0.9268 | 0.9184 (~flat) |
+| SROIE test set | 0.6033 | **0.8533** (+0.25) |
+
+Fine-tuning barely moved clean synthetic-text performance (already strong zero-shot) but
+produced a large, real improvement on noisy real-world OCR text — see the report for why.

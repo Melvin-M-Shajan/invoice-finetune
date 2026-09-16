@@ -9,6 +9,6 @@ requests>=2.31               # synthetic data generation (§5.3) — direct REST
 python-dotenv>=1.0           # loads .env for GEMINI_API_KEY / WANDB_API_KEY
 python-dateutil>=2.9        # date normalization in eval metrics (§7.1)
 pytest>=8.0
+gradio>=4.36                 # optional demo UI (src/demo/app.py)
 # sagemaker>=2.220  # not used — no AWS budget for this run, see README deviation notes
 # boto3>=1.34        # not used — see above
-# gradio>=4.36        # optional demo UI, not built in this run

@@ -64,8 +64,8 @@ Recorded per PRD §13/§4 requirement to document any deviation from a stated de
 
 ## Repository structure
 
-See PRD §10. Matches exactly except `infra/sagemaker_train.py` and `src/demo/app.py`
-(both optional/stretch, not built — see Deviations).
+See PRD §10. Matches exactly except `infra/sagemaker_train.py` (optional/stretch, not
+built — see Deviations; not applicable since training ran locally).
 
 ## Setup
 
@@ -101,8 +101,11 @@ cp .env.example .env   # then fill in GEMINI_API_KEY (see .env.example)
     --adapter models/invoice-lora-v1 --test data/processed/test_sroie.jsonl \
     --out results/finetuned_sroie.json
 
-# 5. Demo
+# 5. Demo (CLI)
 .venv/Scripts/python.exe -m src.demo.cli --input path/to/invoice.txt
+
+# 5b. Demo (Gradio web UI, optional — textbox in, JSON out)
+.venv/Scripts/python.exe -m src.demo.app
 ```
 
 ## Testing

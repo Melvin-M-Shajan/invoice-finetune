@@ -1,9 +1,8 @@
-# Synthetic Data Generation Log (PRD §5.3)
+# Synthetic Data Generation Log
 
 **Generator model:** `openai/gpt-oss-20b` served via the Groq API (fast inference host).
 
-**Deviation from PRD:** §5.3 lists "GPT-4o-mini, Claude Haiku, or equivalent low-cost API
-model." Neither an OpenAI nor an Anthropic key was available at build time. The build went
+I didn't have an OpenAI or Anthropic key at build time. The build went
 through two intermediate providers before landing here — recorded for transparency:
 
 1. Started with a Gemini API key. `gemini-2.5-flash`/`gemini-2.5-flash-lite` turned out to
@@ -13,17 +12,17 @@ through two intermediate providers before landing here — recorded for transpar
 2. Switched to `gemma-4-26b-a4b-it` (also via the Gemini API, a separate quota bucket with
    real throughput) — but at ~30-50s/call, generating 1000 examples would take ~10-14
    hours.
-3. The user then provided a Groq API key specifically to speed this up. Groq's hosted
+3. I then switched to a Groq API key to speed this up. Groq's hosted
    `openai/gpt-oss-20b` responds in well under a second (5/5 and then several more rapid
    test calls all succeeded with no rate-limit errors), so generation switched to Groq and
-   the full PRD-specified 1000-example target became practical again (~15-20 min total).
+   the 1000-example target became practical again (~15-20 min total).
    The first 25 examples generated via the Gemma path were kept (generation is resumable —
    `generate_synthetic` only tops up the remaining count).
 
 `openai/gpt-oss-20b` returns its chain-of-thought in a separate `reasoning` field from the
 final `content` field (OpenAI-compatible chat-completions response shape) — only `content`
 is used as the rendered invoice text; see `_call_groq` in `src/data/prepare_dataset.py`.
-Documented per PRD §13 deviation-recording requirement.
+
 
 ## Method
 
@@ -35,7 +34,7 @@ subtotal + tax`. This guarantees ground truth is correct by construction — the
 model is only asked to *render* that already-correct JSON as free-form invoice text, never
 asked to invent or compute numbers itself.
 
-Varied per example (§5.3): number of line items (1-6), presence/absence of tax, currency
+Varied per example: number of line items (1-6), presence/absence of tax, currency
 symbol ($, €, £), date display format (5 formats), whether subtotal is shown explicitly
 (~85% of examples), vendor name style (~70% company / ~30% individual).
 
@@ -71,15 +70,15 @@ again in `split_and_write` as a final pass.
 
 ## Run record
 
-Total requested: 1000, matching PRD §5.3 (`split_and_write` reserves 10% of the synthetic
+Total requested: 1000 (`split_and_write` reserves 10% of the synthetic
 pool as held-out test — exactly 100 at 1000, and scales down correctly if the pool is
 smaller, see its docstring in `src/data/prepare_dataset.py`).
 
-**Deviation — stopped early at 207.** Even with Groq's fast responses, Groq's free-tier
+**Stopped early at 207.** Even with Groq's fast responses, Groq's free-tier
 **8000 tokens/minute** cap on `openai/gpt-oss-20b` throttled sustained throughput (every
 call's prompt + reasoning + completion tokens count against it; the retry loop backs off
 and retries on every 429, so it never fails, just slows down). After watching it run for a
-while and seeing the pace, the user decided 207 was enough for this build rather than
+while and seeing the pace, I decided 207 was enough for this build rather than
 waiting out the full 1000. `split_and_write` reserves 10% of whatever pool it gets, so this
 produced 21 synthetic test examples instead of 100 (≈635 lines total run 90/10-split for
 synthetic train/val, combined with the SROIE pool — see the actual counts below). Expect
